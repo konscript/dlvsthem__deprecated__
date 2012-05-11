@@ -33,9 +33,6 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
-/** --- PHP Fog --- Set WordPress to cache requests. For use with Varnish. */
-define('WP_CACHE', true);
-
 /**#@+
  * Authentication Unique Keys and Salts.
  *
@@ -88,9 +85,6 @@ define('WP_DEBUG', false);
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
-
-/* PHPFOG edit to patch a few issues of file saves, plugins, etc. */
-define('FS_METHOD', 'direct');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
