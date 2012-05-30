@@ -33,6 +33,12 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
+/** --- PHP Fog --- Set WordPress to cache requests (for Varnish) */
+define('WP_CACHE', true);
+
+/** --- PHP Fog --- Patch a few issues with file saves, plugins, etc. */
+define('FS_METHOD', true);
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
