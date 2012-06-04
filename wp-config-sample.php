@@ -37,7 +37,7 @@ define('DB_COLLATE', '');
 define('WP_CACHE', true);
 
 /** --- PHP Fog --- Patch a few issues with file saves, plugins, etc. */
-define('FS_METHOD', true);
+define('FS_METHOD', 'direct');
 
 /**#@+
  * Authentication Unique Keys and Salts.
