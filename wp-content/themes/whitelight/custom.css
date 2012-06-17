@@ -1,0 +1,255 @@
+/* 
+WOO CUSTOM STYLESHEET (for DLVS)
+---------------------*/
+/**
+ * Grid and Layout
+ ************************************************/
+/**
+ * Colors
+ ************************************************/
+/**
+ * Typography
+ ************************************************/
+/**
+ * Misc. (load compass modules)
+ ************************************************/
+/**********************************************
+ * Hide Search
+ **********************************************/
+#header .search_main {
+  display: none;
+}
+#header hgroup {
+  margin-bottom: 0px;
+}
+/**********************************************
+ * Main Navigaton
+ **********************************************/
+#navigation ul#main-nav {
+  float: right;
+  margin-top: 20px;
+}
+#navigation,
+#navigation .nav a {
+  font-size: 16px;
+}
+#navigation .nav > li:hover > a {
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background-color: #e9e9e9;
+  color: black!important;
+}
+#navigation .nav li.current_page_item a,
+#navigation .nav li.current_page_parent a,
+#navigation .nav li.current-menu-ancestor a,
+#navigation .nav li.current-cat a,
+#navigation .nav li.li.current-menu-item a {
+  color: white!important;
+}
+#navigation .nav li a:hover::after,
+#navigation .nav li:hover > a::after {
+  border-color: #B72020 transparent transparent transparent!important;
+}
+/********************************************** 
+ * Homepage
+ **********************************************/
+.home #content {
+  padding-bottom: 0;
+}
+/********************************************** 
+ * Featured slider on homepage
+ **********************************************/
+#featured {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+}
+#featured article header .button {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  #featured .slide-content-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+  }
+  #featured article {
+    height: 100%;
+    width: 300px;
+    float: right;
+    margin-right: 10%;
+    background: #fff;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  #featured article header {
+    position: relative;
+    height: 100%;
+    background-color: transparent;
+    color: black;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    padding: 30px 30px 0 30px;
+    text-shadow: none;
+  }
+  #featured article header h1,
+  #featured article header .entry {
+    height: auto;
+  }
+  #featured article header h1 {
+    font-family: Georgia, serif;
+    color: black;
+    font-size: 2.5em;
+    padding-bottom: 20px;
+  }
+  #featured article header .entry {
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+    color: #585858;
+  }
+  #featured article header .calltoaction {
+    position: absolute;
+    bottom: 60px;
+    width: 240px;
+    display: block;
+    text-align: center;
+  }
+  #featured article header .calltoaction a {
+    display: block;
+    font-size: 1.1em;
+    background-color: #B72020;
+    border-radius: 3px;
+    padding: 10px 20px;
+    width: auto;
+  }
+  #featured article header .calltoaction a:hover {
+    background-color: #db2f2f;
+    text-decoration: none;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #featured article {
+    background: #B72020;
+  }
+  #featured article header {
+    text-shadow: none;
+  }
+  #featured article header h1 {
+    font-family: Georgia, serif;
+    font-size: 2.5em;
+  }
+  #featured article header .entry {
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 920px) {
+  #featured article header .entry {
+    display: none;
+  }
+}
+.controls-container .flex-control-nav {
+  left: 20px;
+  right: auto;
+}
+/********************************************** 
+ * Features area on homepage
+ **********************************************/
+.home-section#features li h2 a {
+  font-weight: normal;
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1em;
+}
+.home-section#features li p img {
+  margin-right: 15px;
+}
+.home-section li h2 {
+  margin-bottom: 1em;
+}
+.home-section header h1 {
+  font-size: 1em;
+  font-weight: bold;
+}
+/********************************************** 
+ * Blogpost area on homepage
+ **********************************************/
+.home-section#blog-alt li h2 a {
+  font-weight: normal;
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1em;
+}
+.home-section#blog-alt ul li .thumbnail {
+  display: none;
+}
+/* Only apply to iPad portrait and up */
+@media only screen and (min-width: 768px) {
+  .home-section#blog-alt header {
+    width: 48%;
+    margin-right: 4%;
+  }
+  .home-section#blog-alt ul {
+    width: 48%;
+  }
+  .home-section#blog-alt ul li {
+    width: 46%;
+    margin-right: 8%;
+  }
+  .home-section#blog-alt ul li.last {
+    margin-right: 0;
+  }
+}
+/********************************************** 
+ * Streamer (mobile app) area on homepage
+ **********************************************/
+.home-section#streamer {
+  border-bottom: none;
+}
+.home-section#streamer h1 {
+  font-weight: normal;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.3em;
+  font-size: 2.2em;
+}
+.home-section#streamer h1 .highlight {
+  color: #b7190e;
+}
+.home-section#streamer .phone .icons {
+  margin: 20px 0;
+}
+/* Only apply to iPad portrait and up */
+@media only screen and (min-width: 768px) {
+  .home-section#streamer h1 {
+    float: left;
+    margin-bottom: 1.5em;
+  }
+  .home-section#streamer .phone {
+    float: right;
+  }
+  .home-section#streamer .phone a.iphone-model {
+    float: left;
+    margin-top: -90px;
+  }
+  .home-section#streamer .phone .icons {
+    float: left;
+    margin: 0 40px;
+  }
+  .home-section#streamer .phone .icons a {
+    display: block;
+    margin: 5px 0;
+  }
+}
+/********************************************** 
+ * Mixins
+ **********************************************/
