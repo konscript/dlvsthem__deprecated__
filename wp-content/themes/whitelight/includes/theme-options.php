@@ -1229,6 +1229,11 @@ if ( get_post_type() == 'slide' || !get_post_type() ) {
 								"type" => "text",
 								"desc" => "Enter an URL to link the slider title and image to a page e.g. http://yoursite.com/pagename/ (optional) ");
 
+	$woo_metaboxes[] = array (	"name" => "button_text",
+								"label" => "Slide Button Text",
+								"type" => "text",
+								"desc" => "Enter a text for the button on the frontpage");
+
 } // End Slide
 
 if( get_post_type() == 'features' || !get_post_type() ){	
