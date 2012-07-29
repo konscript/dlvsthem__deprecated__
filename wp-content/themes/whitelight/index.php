@@ -23,7 +23,8 @@
 					'features_area' => 'true',
 					'portfolio_area' => 'true',
 					'blog_area' => 'false',
-					'alt_blog_area' => 'false'
+					'alt_blog_area' => 'false',
+					'streamer_area' => 'false'
 					);
 					
 	$settings = woo_get_dynamic_values( $settings );
@@ -58,7 +59,7 @@
 			if ( $settings['blog_area'] == 'true' ) { get_template_part( 'includes/homepage-blog-panel' ); }
 
 			// DLVS: Output the streamer
-			get_template_part( 'includes/homepage-streamer-panel' ); 
+			if ( $settings['streamer_area'] == 'true' ) { get_template_part( 'includes/homepage-streamer-panel' ); }
 		
 		} else {
 			
