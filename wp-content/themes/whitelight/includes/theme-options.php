@@ -553,6 +553,12 @@ $options[] = array( "name" => "Blog Area Title Text",
 					"id" => $shortname."_alt_blog_area_title",
 					"std" => "Some of our Blog Posts",
 					"type" => "text" );
+
+$options[] = array( "name" => "Blog Area Image",
+                    "desc" => "Select a image to be shown on the left side.",
+                    "id" => $shortname."_alt_blog_area_image",
+					"std" => "",
+					"type" => "upload" );
 										
 $options[] = array( "name" => "Blog Area Message",
                     "desc" => "Enter the message for the blog area alternate layout to be displayed on your homepage.",
@@ -608,8 +614,15 @@ $options[] = array(    "name" => __( 'Blog Area Order', 'woothemes' ),
 					"type" => "select2",
 					"options" => array("DESC" => __( 'Newest to oldest', 'woothemes' ), "ASC" => "Oldest to newest", "rand" => "Random order") ); 
 					
-					
-																				
+$options[] = array( "name" => "Streamer Area",
+					"type" => "subheading" );
+
+$options[] = array( "name" => "Enable Streamer Area",
+                    "desc" => "Enable the streamer (phone commercial) area on the homepage.",
+                    "id" => $shortname."_streamer_area",
+                    "std" => "false",
+                    "type" => "checkbox");
+
 /* Featured Slider */
 
 $options[] = array( "name" => "Featured Slider",
@@ -1215,6 +1228,11 @@ if ( get_post_type() == 'slide' || !get_post_type() ) {
 								"label" => "Slide URL",
 								"type" => "text",
 								"desc" => "Enter an URL to link the slider title and image to a page e.g. http://yoursite.com/pagename/ (optional) ");
+
+	$woo_metaboxes[] = array (	"name" => "button_text",
+								"label" => "Slide Button Text",
+								"type" => "text",
+								"desc" => "Enter a text for the button on the frontpage");
 
 } // End Slide
 

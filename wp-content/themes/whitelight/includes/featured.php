@@ -84,12 +84,10 @@
 	    	    		<header>
 	    	    			
 	    	    			<h1>
-	    	    				<?php if ( isset($url) && $url != '' ) { ?><a href="<?php echo $url ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php } ?>
-	    	    					<?php
-	    	    						$slide_title = get_the_title();
-	    	    						echo woo_text_trim ( $slide_title, 25 );
-	    	    					?>
-	    	    				<?php if ( isset($url) && $url != '' ) { ?></a><?php } ?>
+		    					<?php
+		    						$slide_title = get_the_title();
+		    						echo woo_text_trim ( $slide_title, 25 );
+		    					?>
 	    	    			</h1>
 	    	    			
 	    	    			<div class="entry">
@@ -100,7 +98,11 @@
 	    	    			</div>
 	    	    			<br />
 	    	    			<div class="calltoaction">
-	    	    				<a href="booking">Book tid online</a>
+	    	    				<?php if ( isset($url) && $url != '' ) { ?>
+	    	    					<a href="<?php echo $url ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+	    	    						<?php echo get_post_meta($post->ID, 'button_text', true); ?>
+	    	    					</a>
+	    	    				<?php } ?>
 	    	    			</div>
 	    	    		</header>
 	    	    		

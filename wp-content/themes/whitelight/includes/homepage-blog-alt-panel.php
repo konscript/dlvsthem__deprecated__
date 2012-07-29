@@ -18,6 +18,7 @@
 					'alt_blog_area_entries' => 3,
 					'alt_blog_area_title' => '',
 					'alt_blog_area_message' => '',
+					'alt_blog_area_image' => '',
 					'alt_blog_area_link_text' => __( 'View all our blog posts', 'woothemes' ),
 					'alt_blog_area_link_URL' => '',
 					'alt_blog_area_order' => 'DESC'
@@ -41,7 +42,7 @@
     		
     			<header class="block">
     				<a href="<?php if ( $settings['alt_blog_area_link_URL'] != '' ) echo $settings['alt_blog_area_link_URL']; else echo next_posts(); ?>" title="<?php echo stripslashes( $settings['alt_blog_area_link_text'] ); ?>">
-    					<img src="<?php echo get_template_directory_uri(); ?>/images/dlvs/frontpage-mapthumb2.jpg" style="max-width: 100%;" />
+    					<img src="<?php echo $settings['alt_blog_area_image']; //get_post_meta( $post->ID, 'alt_blog_area_image', true ); ?>" alt="" style="max-width: 100%;" />
     				</a>
     				<p><?php echo stripslashes( $settings['alt_blog_area_message'] ); ?></p>
     				<a class="more" href="<?php if ( $settings['alt_blog_area_link_URL'] != '' ) echo $settings['alt_blog_area_link_URL']; else echo next_posts(); ?>" title="<?php echo stripslashes( $settings['alt_blog_area_link_text'] ); ?>"><?php echo stripslashes( $settings['alt_blog_area_link_text'] ); ?></a>
