@@ -137,6 +137,135 @@ table.zebra td {
 table.zebra tbody tr:nth-child(odd) {
   background-color: #f6f6f6;
 }
+/*****************************************************************
+ *	CUSTOM POST TYPES
+ *****************************************************************//*
+  * Clinic
+	**********************************/
+.post.clinic h1 {
+  margin-top: 10px;
+}
+.contact p.address {
+  background: url('../../img/icon-address-black-20px.png') no-repeat center left;
+}
+.contact p.telephone {
+  background: url('../../img/icon-telephone-20px.png') no-repeat center left;
+}
+.contact p.telephone,
+.contact p.address {
+  padding-left: 25px;
+  min-height: 20px;
+  line-height: 13px;
+}
+.gmap a {
+  float: left;
+}
+/**
+  * region
+  **********************************/
+div.post.region #country-selector {
+  width: 155px;
+}
+div.post.region .country {
+  display: block;
+  float: left;
+  width: 34px;
+  height: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 10px;
+}
+div.post.region .country img {
+  width: 100%;
+}
+/**
+  * country
+  **********************************/.country-meta-header {
+  text-align: center;
+  margin: 0 0 20px 0;
+  font-family: Georgia, "Times New Roman", serif;
+}
+.country-meta {
+  border: 1px solid #eeeeee;
+  display: block;
+  text-align: left;
+  line-height: 2em;
+  padding-bottom: 10px;
+}
+.country-meta td {
+  padding: 5px 10px 0 10px;
+}
+.country-flag {
+  text-align: right;
+  margin-top: 10px;
+}
+.country-flag img {
+  width: 100%;
+}
+div.post.country #vaccinations_groups {
+  width: 100%;
+  border-top: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
+}
+div.post.country table#vaccinations_groups thead tr td {
+  font-weight: bold;
+}
+div.post.country table#vaccinations_groups tr td:first-child {
+  text-align: left;
+}
+div.post.country table#vaccinations_groups tr td {
+  text-align: center;
+  padding: 5px 10px;
+  border-bottom: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+}
+div.post.country table#vaccinations_groups tr td img {
+  margin-top: 5px;
+  width: 18px;
+  height: 18px;
+}
+div.post.country table#vaccinations_groups tr td.vaccination-name {
+  width: 30%;
+}
+div.post.country .disclaimer {
+  color: #aaa;
+}
+div.post.country .disclaimer h3 {
+  margin-top: 0;
+}
+div.post.country .disclaimer ul {
+  list-style: disc;
+  margin: 10px 0;
+}
+div.post.country .disclaimer ul li {
+  list-style-position: inside;
+  text-indent: 1em;
+}
+/**
+* faq
+**********************************/.post.faq #searchFaq {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #bebebe;
+  background-color: #fff;
+  color: #000;
+  outline: none;
+}
+.post.faq #clearSearch {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 2px 6px 3px 6px;
+}
 /*----------------------*/
 /* Adding padding to left & right of content columns */
 #top,
