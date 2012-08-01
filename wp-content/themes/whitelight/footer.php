@@ -46,7 +46,12 @@
 			<?php if( isset( $woo_options['woo_footer_left'] ) && $woo_options['woo_footer_left'] == 'true' ) {
 	
 					echo stripslashes( $woo_options['woo_footer_left_text'] );
-	
+
+					// set linkedin follow button for flufighters only!
+ 					if(strpos(get_bloginfo('url'), "flufighters") !== false){
+						echo '<br><br><script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+						<script type="IN/FollowCompany" data-id="2670047" data-counter="none"></script>';
+					}
 			} else { ?>
 				<p><?php bloginfo(); ?> &copy; <?php echo date( 'Y' ); ?>. <?php _e( 'All Rights Reserved.', 'woothemes' ); ?></p>
 			<?php } ?>
