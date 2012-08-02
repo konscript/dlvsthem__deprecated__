@@ -116,3 +116,63 @@
   		tbody tr:nth-child(odd){
   			background-color: #f6f6f6; }
   }
+
+	/*****
+	 * Sidebar
+	 *************************/
+
+	#sidebar {
+	}	 
+
+	.sidebar-menu {
+		padding-bottom: 20px;
+	}
+
+	.sidebar-image {
+		padding-bottom: 20px;
+
+		img {
+			.rounded();
+		}		
+	}
+
+	// hide category name in submenu
+	#sidebar li.categories,
+	#sidebar li.pagenav {
+		//margin-bottom: 20px;
+		list-style-type: none;
+
+		h2 { display:none; }
+	}			
+
+	#sidebar ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+	#sidebar ul li {
+		display:inline;
+		height:30px;
+		line-height:30px;
+
+	}
+	#sidebar ul li a {
+		color: #000;
+		float:left;
+		text-decoration:none;
+		width:100%;
+		background:url('../img/submenu_off.gif') no-repeat;
+		background-position:7px 50%;
+		text-indent: 25px;
+		border-bottom: 1px solid @color_secondary_c;
+		height: 30px;
+		overflow: hidden;		
+	}
+	#sidebar ul li a:hover,
+	#sidebar ul .current-menu-item a,
+	#sidebar ul .current-cat a {
+		background:url('../img/submenu_on.gif') no-repeat;
+		background-position:0 50%;
+		text-decoration: none;
+		font-weight: normal;
+	}

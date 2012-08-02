@@ -8,8 +8,9 @@
 
 			<a class="button-book" href="<?php echo get_bloginfo('wpurl'); ?>/booking/"><div class="button-book-title">Bestil vaccination</div></a>
 			<header><h1><?php the_title(); ?></h1></header>
-			<?php echo the_content(); ?>
-
+			<?php while ( have_posts() ) { the_post(); $count++;
+				the_content(); 
+			}?>	
 			<div id="map-wrapper">
 
 				<h3 class="map-header">Hvilke vacciner anbefales?</h3>

@@ -1,19 +1,27 @@
 <?php get_header(); ?>
 <?php 
 // Sidebar menu
-$args = array(
-  'post_type'=>'region',
-  'title_li'=> '&nbsp;',
-  'echo'         => false,  
-);
-$sidebar_menu = wp_list_pages( $args );
-$sidebar_country_meta_links = '<a href="'.get_field('latest_disease_surveillance').'" target="_blank">Sidste sygdomsovervågning</a>';
-if (get_field('updated_malaria_map')) {
-	$sidebar_country_meta_links .= '<br /><a href="'.get_field('updated_malaria_map').'" target="_blank">Opdateret Malaria kort</a>';
-}
-$sidebar_country_meta = '
-	<h3 class="country-meta-header">Lande fakta</h3>
-	<table class="country-meta">
+// $args = array(
+//   'post_type'=>'region',
+//   'title_li'=> '&nbsp;',
+//   'echo'         => false,  
+// );
+// $sidebar_menu = wp_list_pages( $args );
+// $sidebar_country_meta_links = '<a href="'.get_field('latest_disease_surveillance').'" target="_blank">Sidste sygdomsovervågning</a>';
+// if (get_field('updated_malaria_map')) {
+// 	$sidebar_country_meta_links .= '<br /><a href="'.get_field('updated_malaria_map').'" target="_blank">Opdateret Malaria kort</a>';
+// }
+
+$sidebar_country_meta = '<h3 class="country-meta-header">Lande fakta</h3>';
+
+		if(get_field('flag')) {
+			$sidebar_country_meta .= '
+			<div class="country-flag">
+				<img src="'.get_field("flag").'" />
+			</div>';
+		}
+
+$sidebar_country_meta .= '<table class="country-meta">
 		<tbody>
 		<tr>
 			<td><strong>Capital:</strong></td>
@@ -44,13 +52,7 @@ $sidebar_country_meta = '
 
 			<?php if (have_posts()): while (have_posts()): the_post(); ?>
 			    <div class="post country col-full">
-		        
-					<?php if(get_field('flag')) { ?>
-						<div class="country-flag">
-							<img src="<?php echo get_field('flag'); ?>" />
-						</div>
-					<?php } ?>
-					
+		 				
 					<header><h1><?php the_title(); ?></h1></header>
 
 					<?php 

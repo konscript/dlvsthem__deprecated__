@@ -30,7 +30,7 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 						?>     					
 						
 						<div class="contact">	
-							<p class="header">Contact</p>
+							<p class="header"></p>
 							<p class="address">Address: <?php the_field('address'); ?>, <?php the_field('city'); ?></p>					
 							<p class="telephone">Phone: <?php the_field('phone_number'); ?></p>
 						</div>	

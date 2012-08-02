@@ -137,6 +137,61 @@ table.zebra td {
 table.zebra tbody tr:nth-child(odd) {
   background-color: #f6f6f6;
 }
+/*****
+	 * Sidebar
+	 *************************/
+.sidebar-menu {
+  padding-bottom: 20px;
+}
+.sidebar-image {
+  padding-bottom: 20px;
+}
+.sidebar-image img {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+#sidebar li.categories,
+#sidebar li.pagenav {
+  list-style-type: none;
+}
+#sidebar li.categories h2,
+#sidebar li.pagenav h2 {
+  display: none;
+}
+#sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#sidebar ul li {
+  display: inline;
+  height: 30px;
+  line-height: 30px;
+}
+#sidebar ul li a {
+  color: #000;
+  float: left;
+  text-decoration: none;
+  width: 100%;
+  background: url('../img/submenu_off.gif') no-repeat;
+  background-position: 7px 50%;
+  text-indent: 25px;
+  border-bottom: 1px solid #eeeeee;
+  height: 30px;
+  overflow: hidden;
+}
+#sidebar ul li a:hover,
+#sidebar ul .current-menu-item a,
+#sidebar ul .current-cat a {
+  background: url('../img/submenu_on.gif') no-repeat;
+  background-position: 0 50%;
+  text-decoration: none;
+  font-weight: normal;
+}
 /*****************************************************************
  *	CUSTOM POST TYPES
  *****************************************************************//*
@@ -146,14 +201,15 @@ table.zebra tbody tr:nth-child(odd) {
   margin-top: 10px;
 }
 .contact p.address {
-  background: url('../../img/icon-address-black-20px.png') no-repeat center left;
+  background: url('../img/icon-address-black-20px.png') no-repeat center left;
 }
 .contact p.telephone {
-  background: url('../../img/icon-telephone-20px.png') no-repeat center left;
+  background: url('../img/icon-telephone-20px.png') no-repeat center left;
 }
 .contact p.telephone,
 .contact p.address {
   padding-left: 25px;
+  margin-bottom: 20px;
   min-height: 20px;
   line-height: 13px;
 }
@@ -180,7 +236,10 @@ div.post.region .country img {
 }
 /**
   * country
-  **********************************/.country-meta-header {
+  **********************************/.post.country header {
+  float: left;
+}
+.country-meta-header {
   text-align: center;
   margin: 0 0 20px 0;
   font-family: Georgia, "Times New Roman", serif;
@@ -198,6 +257,7 @@ div.post.region .country img {
 .country-flag {
   text-align: right;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 .country-flag img {
   width: 100%;
@@ -607,9 +667,6 @@ div.post.country .disclaimer ul li {
   }
   .featured-wrap.carousel.faded #featured .slides li.current-slide {
     filter: alpha(opacity=@opacity * 100) !important;
-    -moz-opacity: 1 !important;
-    -khtml-opacity: 1 !important;
-    opacity: 1 !important;
     -moz-opacity: 1 !important;
     -khtml-opacity: 1 !important;
     -webkit-opacity: 1 !important;
