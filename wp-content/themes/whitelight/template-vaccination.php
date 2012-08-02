@@ -3,12 +3,13 @@
 
 <div id="content">
 	<div class="page col-full">
-		<?php sidebar(true, true, false); ?>
+		<?php //sidebar(true, true, false); ?>
 		<section id="main" class="col-left">
 			<a class="button-book" href="<?php echo get_bloginfo('wpurl'); ?>/booking/"><div class="button-book-title">Bestil vaccination</div></a>
 			<header><h1><?php the_title(); ?></h1></header>
-			<?php echo the_content(); ?>
-		
+			<?php while ( have_posts() ) { the_post(); $count++;
+				the_content(); 
+			}?>			
 			<?php $args = array(
 			'orderby'         => 'title',
 			'order'           => 'ASC',

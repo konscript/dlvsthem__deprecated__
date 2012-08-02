@@ -23,10 +23,11 @@
 	.contact {
 		// @include column( @content_cols / 2 );	
 
-		p.address {	background: url('../../img/icon-address-black-20px.png') no-repeat	center left; }
-		p.telephone {	background: url('../../img/icon-telephone-20px.png') no-repeat	center left; }		
+		p.address {	background: url('../img/icon-address-black-20px.png') no-repeat	center left; }
+		p.telephone {	background: url('../img/icon-telephone-20px.png') no-repeat	center left; }		
 		p.telephone, p.address {
 			padding-left: 25px;
+			margin-bottom: 20px; 
 			min-height: 20px;
 			line-height:13px;
 		}
@@ -79,6 +80,10 @@
   * country
   **********************************/  
 
+  	.post.country header {
+  		float:left;
+  	}
+
 	.country-meta-header {
 		// @include column(@sidebar_columns);
 		text-align: center;
@@ -106,11 +111,10 @@
 	}
 
 	.country-flag {
-		// @include column(3);
 
-//		width: 30px;
 		text-align: right;
 		margin-top: 10px;
+		margin-bottom: 10px;
 
 		img {
 			width: 100%;
@@ -146,7 +150,7 @@
 			text-align: center;	
 			padding: 5px 10px;
 			border-bottom: 1px solid @color_secondary_c;
-			border-right: 1px solid @color_secondary_c;			
+			border-right: 1px solid @color_secondary_c;
 
 			img {
 				margin-top: 5px;
