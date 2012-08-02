@@ -3,7 +3,7 @@
 
 <div id="content">
 	<div class="page col-full">
-		<?php sidebar(true, true, false); ?>
+		<?php //sidebar(true, true, false); ?>
 		<section id="main" class="col-left">
 
 			<a class="button-book" href="<?php echo get_bloginfo('wpurl'); ?>/booking/"><div class="button-book-title">Bestil vaccination</div></a>
