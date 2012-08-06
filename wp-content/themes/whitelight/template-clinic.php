@@ -16,13 +16,13 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 	
 			<?php 
 			$clinic = basename(get_permalink());
-			echo '<a class="button-book" href="' . get_bloginfo('wpurl') . '/booking/clinic/' . $clinic . '"><div class="button-book-title">Bestil vaccination</div></a>';
+			//echo '<a class="button-book" href="' . get_bloginfo('wpurl') . '/booking/clinic/' . $clinic . '"><div class="button-book-title">Bestil vaccination</div></a>';
 			?>
 			<header><h1><?php the_title(); ?></h1></header>
+			<br />
 			<?php while ( have_posts() ) { the_post(); $count++;
 				the_content(); 
 			}?>	
-
 		</section>
 	</div>
 </div>

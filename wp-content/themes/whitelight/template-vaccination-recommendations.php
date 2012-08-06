@@ -1,19 +1,26 @@
 <?php /* Template Name: Vaccination recommendations */ ?>
 <?php get_header(); ?>
+<?php 
+$args = array(
+	'post_type'	=>'region',
+	'title_li'	=> '&nbsp;',
+	'echo'		=> false,
+);
+//$sidebar_button = '<a class="button-book" href="'.get_bloginfo("wpurl").'/booking/"><div class="button-book-title">Bestil vaccination</div></a>';
+$sidebar_menu = wp_list_pages( $args ); ?>
 
 <div id="content">
 	<div class="page col-full">
-		<?php //sidebar(true, true, false); ?>
+		<?php 
+		sidebar($sidebar_menu, true, false); ?>
 		<section id="main" class="col-left">
-
-			<a class="button-book" href="<?php echo get_bloginfo('wpurl'); ?>/booking/"><div class="button-book-title">Bestil vaccination</div></a>
+			
 			<header><h1><?php the_title(); ?></h1></header>
+			<br />
 			<?php while ( have_posts() ) { the_post(); $count++;
 				the_content(); 
 			}?>	
 			<div id="map-wrapper">
-
-				<h3 class="map-header">Hvilke vacciner anbefales?</h3>
 			
 				<div class="map-form-container">
 					<form method="GET" class="map-form" action="<?php bloginfo('wpurl'); ?>">
@@ -33,8 +40,6 @@
 					</form>
 					<span class="map-text">eller klik på kortet:</span>
 				</div>
-				
-
 
 				 <div id="map-continents">
 				 <ul class="continents">

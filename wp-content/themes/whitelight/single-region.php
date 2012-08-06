@@ -3,7 +3,7 @@
 $args = array(
 	'post_type'	=>'region',
 	'title_li'	=> '&nbsp;',
-	'echo'			=> false,
+	'echo'		=> false,
 );
 $sidebar_menu = wp_list_pages( $args ); ?>
 
@@ -19,7 +19,7 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 
 						<form method="GET" class="map-form" action="<?php bloginfo('wpurl'); ?>">
 						  <select name="Country" id="country-selector">
-					    <option value="" selected="selected">Select Country</option>
+					    <option value="" selected="selected">Vælg land</option>
 							<?php $region = get_post_custom_values('countries');
 										$countries = getCountries($region[0]); ?>	
 							<?php foreach($countries as $country): ?>
@@ -34,7 +34,7 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 						  <input type="Submit" value="Find">
 						</form>	
 
-						<span> to read more about it, and the recommended vaccinations.</span>
+						<span> for at lære mere om landet og anbefalede vaccinationer.</span>
 
 						<img class="region-map" src="<?php bloginfo('template_directory'); ?>/img/continents-<?php echo basename(get_permalink()); ?>.png" alt="<?php echo basename(get_permalink()); ?>" />
 		      	

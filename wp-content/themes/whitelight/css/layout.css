@@ -40,46 +40,37 @@ INDEX
  * Utilities (_utilities.less)
  */
 a.button-book {
-  background: #b7190e;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #b7190e), color-stop(1, #ee3124));
-  background: -ms-linear-gradient(bottom, #b7190e, #ee3124);
-  background: -moz-linear-gradient(center bottom, #b7190e 0%, #ee3124 100%);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   position: relative;
-  width: auto;
-  background-color: #ee3124;
+  width: 100%;
+  background-color: #B72020;
   display: block;
-  float: right;
+  float: left;
   margin: 0 0 20px 0;
   cursor: pointer;
   border-top: 1px solid #f25e53;
   border-bottom: 1px solid #88130b;
 }
 a.button-book:hover {
-  background: #f0473c;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #f0473c), color-stop(1, #cf1c10));
-  background: -ms-linear-gradient(bottom, #f0473c, #cf1c10);
-  background: -moz-linear-gradient(center bottom, #f0473c 0%, #cf1c10 100%);
-  background-color: #f0473c;
+  background-color: #DB2F2F;
   border-top: 1px solid #cf1c10;
   border-bottom: 1px solid #e72012;
   color: #fff;
   text-decoration: none;
 }
 a.button-book .button-book-title {
-  float: left;
+  text-align: center;
   color: #f6f6f6;
   line-height: 1em;
   font-weight: normal;
-  text-transform: uppercase;
-  font-family: 'Lucida Grande', Georgia, verdana, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
   letter-spacing: 0.05em;
-  font-size: 15px;
+  font-size: 17px;
   padding: 16px 24px 16px 24px;
   margin: 0 auto;
 }
@@ -201,17 +192,17 @@ table.zebra tbody tr:nth-child(odd) {
   margin-top: 10px;
 }
 .contact p.address {
-  background: url('../img/icon-address-black-20px.png') no-repeat center left;
+  background: url('../img/icon-address-black-20px.png') no-repeat 2px center;
 }
 .contact p.telephone {
-  background: url('../img/icon-telephone-20px.png') no-repeat center left;
+  background: url('../img/icon-telephone-20px.png') no-repeat left center;
 }
 .contact p.telephone,
 .contact p.address {
-  padding-left: 25px;
+  padding-left: 27px;
   margin-bottom: 20px;
   min-height: 20px;
-  line-height: 13px;
+  line-height: 20px;
 }
 .gmap a {
   float: left;
@@ -221,6 +212,10 @@ table.zebra tbody tr:nth-child(odd) {
   **********************************/
 div.post.region #country-selector {
   width: 155px;
+}
+div.post.region .region-map {
+  display: block;
+  margin: 0 auto;
 }
 div.post.region .country {
   display: block;

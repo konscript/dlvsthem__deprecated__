@@ -4,26 +4,26 @@
 
 	// Book button
 	a.button-book {
-		.gradient(@color_contrast, @color_contrast, @color_contrast_b);
-		.rounded(4px);
+		//.gradient(@color_contrast, @color_contrast, @color_contrast_b);
+		.rounded(3px);
 		// @include box-shadow(0px 1px 4px rgba(000,000,000,0.3),0px 0px 1px rgba(255,255,255,0.7));
 		position: relative;
-		width: auto;		
-		background-color: @color_contrast_b;
+		width: 100%;		
+		background-color: #B72020;
 		display: block;
-		float: right;
+		float: left;
 		margin: 0 0 20px 0;
 		cursor: pointer;
 		border-top: 1px solid lighten(@color_contrast_b, 10%);
-		border-bottom: 1px solid darken(@color_contrast, 10%);		
+		border-bottom: 1px solid darken(@color_contrast, 10%);
 		//clear: both;
 		//border: 1px solid #187805;
 
 		&:hover {
 			// @include background-image(linear-gradient());
-			.gradient(lighten(@color_contrast_b, 5%), lighten(@color_contrast_b, 5%), lighten(@color_contrast, 5%));
+			//.gradient(lighten(@color_contrast_b, 5%), lighten(@color_contrast_b, 5%), lighten(@color_contrast, 5%));
 			// @include box-shadow(0px 1px 4px rgba(000,000,000,0.4), 1px 0px 2px rgba(255,255,255,0.7));		
-			background-color: lighten(@color_contrast_b, 5%);
+			background-color: #DB2F2F;
 			border-top: 1px solid darken(@color_contrast_b, 10%);
 			border-bottom: 1px solid lighten(@color_contrast, 10%);					
 			//border: 1px solid #208c0b;
@@ -34,15 +34,16 @@
 				
 		.button-book-title {
 			// @include text-shadow(0 1px 0 rgba(000,000,000,0.3));		
-			float: left;
+			//float: left;
+			text-align: center;
 			color: @color_secondary_b;
 			line-height: 1em;			
 			font-weight: normal;
 			//font-style: italic;			
-			text-transform: uppercase;
-			font-family: 'Lucida Grande', Georgia, verdana, sans-serif;			
+			//text-transform: uppercase;
+			font-family: 'Helvetica Neue', Helvetica, sans-serif;
 			letter-spacing: 0.05em;
-			font-size: 15px;
+			font-size: 17px;
 			padding: 16px 24px 16px 24px;
 			margin: 0 auto;	
 		}

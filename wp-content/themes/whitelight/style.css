@@ -363,7 +363,7 @@ h2 {
   font-size: 1.8em;
 }
 h3 {
-  font-size: 1.6em;
+  font-size: 1.4em;
 }
 h4 {
   font-size: 1.2em;
@@ -2379,6 +2379,10 @@ article.type-features .post-more a:visited:hover {
 }
 #footer-widgets .widget {
   color: #8b8b8b;
+}
+#footer-widgets .widget a {
+  color: white;
+  text-decoration: underline;
 }
 #footer-widgets .widget h3 {
   color: #fff;

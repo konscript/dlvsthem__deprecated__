@@ -12,23 +12,26 @@
 // 	$sidebar_country_meta_links .= '<br /><a href="'.get_field('updated_malaria_map').'" target="_blank">Opdateret Malaria kort</a>';
 // }
 
-$sidebar_country_meta = '<h3 class="country-meta-header">Lande fakta</h3>';
+$sidebar_back = '<a href="'. get_bloginfo("wpurl") . '/vaccinationsanbefaling/" style="margin-bottom:10px;float:left">Tilbage til landeoversigten</a><br />';
+$destination = urlencode(the_title('', '', false));
+$sidebar_button = '<a class="button-book" href="'.get_bloginfo("wpurl").'/booking/destination/' . $destination . '"><div class="button-book-title">Bestil vaccination</div></a>';
 
-		if(get_field('flag')) {
-			$sidebar_country_meta .= '
-			<div class="country-flag">
-				<img src="'.get_field("flag").'" />
-			</div>';
-		}
-
-$sidebar_country_meta .= '<table class="country-meta">
+//$sidebar_country_meta = '<h3>Lande fakta</h3>';
+if(get_field('flag')) {
+	$sidebar_country_meta = '
+	<div class="country-flag">
+		<img src="'.get_field("flag").'" />
+	</div>';
+}
+$sidebar_country_meta .= 
+	'<table class="country-meta">
 		<tbody>
 		<tr>
-			<td><strong>Capital:</strong></td>
+			<td><strong>Hovedstad:</strong></td>
 			<td>'.get_field('capital').'</td>
 		</tr>
 		<tr>
-			<td><strong>Population:</strong></td>
+			<td><strong>Indbyggere:</strong></td>
 			<td>'.get_field('population').'</td>
 		</tr>
 		<tr>
@@ -47,7 +50,7 @@ $sidebar_country_meta .= '<table class="country-meta">
 
 <div id="content">
 	<div class="page col-full">
-		<?php sidebar($sidebar_menu, false, $sidebar_country_meta); ?>
+		<?php sidebar($sidebar_back . $sidebar_button, false, $sidebar_country_meta); ?>
 		<section id="main" class="col-left">
 
 			<?php if (have_posts()): while (have_posts()): the_post(); ?>
@@ -58,7 +61,7 @@ $sidebar_country_meta .= '<table class="country-meta">
 					<?php 
 						$destination = urlencode(the_title('', '', false));
 						$book_button = '<a class="button-book" href="' . get_bloginfo('wpurl') . '/booking/destination/' . $destination . '"><div class="button-book-title">Bestil vaccination</div></a>';
-						echo $book_button;
+						//echo $book_button;
 					?>
 	
 					<div class="post-content">	
@@ -81,7 +84,7 @@ $sidebar_country_meta .= '<table class="country-meta">
 					<table id="vaccinations_groups">
 						<thead>
 							<tr>
-								<td>Vaccination List</td>
+								<td>Vaccination</td>
 								<?php foreach($vaccinations_groups_labels as $label): ?>
 									<td><?=$label?></td>
 								<?php endforeach; ?>							
@@ -121,7 +124,7 @@ $sidebar_country_meta .= '<table class="country-meta">
 						<?php endforeach; ?>	
 						</tbody>
 					</table>		
-					
+					<br />
 					<div class="disclaimer">
 						The vaccination list on this page is for general guidance, and it may vary from your actual needs. Therefore, when you book time for vaccinations or malaria counseling, you will receive a risk assessment form in your e-mail with questions about:
 						<ul>
