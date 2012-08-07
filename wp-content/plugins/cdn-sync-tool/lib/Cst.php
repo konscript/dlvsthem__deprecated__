@@ -291,8 +291,8 @@ class Cst {
 			$filesToSync = $wpdb->get_results("SELECT * FROM `".CST_TABLE_FILES."` WHERE `synced` = '0'", ARRAY_A);
 			$total = count($filesToSync);
 			$i = 1;
-			echo '<div class="cst-progress">';	
 			echo '<h2>Syncing Files..</h2>';
+			echo '<div class="cst-progress" style="height: 500px; overflow: auto;">';
 			foreach($filesToSync as $file) {
 				$this->pushFile($file['file_dir'], $file['remote_path']);
 				$padstr = str_pad("", 512, " ");
@@ -312,7 +312,7 @@ class Cst {
 			}
 			echo 'All files synced.';
 		}
-		echo '<br /><br />Return to <a href="'.CST_URL.'?page=cst">CST Options</a>.</div>';
+		echo '</div><br /><br />Return to <a href="'.CST_URL.'?page=cst">CST Options</a>.';
 	}
 
 	/**
@@ -360,14 +360,23 @@ class Cst {
 	private function getDirectoryFiles($dirs) {
 		$files = array();
 		foreach ($dirs as $dir) {
-			if ($handle = opendir($dir)) {
-				while (false !== ($entry = readdir($handle))) {
-					if (preg_match('$\.(css|js|jpe?g|gif|png)$', $entry)) {
-						$files[] = $dir.'/'.$entry;
-					}
+			// if ($handle = opendir($dir)) {
+			// 	while (false !== ($entry = readdir($handle))) {
+			// 		if (preg_match('$\.(css|js|jpe?g|gif|png)$', $entry)) {
+			// 			$files[] = $dir.'/'.$entry;
+			// 		}
+			// 	}
+			// 	closedir($handle);
+			// }
+
+			$di = new RecursiveDirectoryIterator($dir);
+
+			foreach (new RecursiveIteratorIterator($di) as $filename => $file) {
+				if (preg_match('$\.(css|js|jpe?g|gif|png)$', $filename)) {
+					$files[] = $filename;
 				}
-				closedir($handle);
 			}
+
 		}
 		return $files;
 	}

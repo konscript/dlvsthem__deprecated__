@@ -2,7 +2,14 @@
   display: none;
 }
 .cst-progress {
-  padding-top: 50px;
+  margin-top: 50px;
+  padding: 10px;
+  height: 500px;
+  width: 700px;
+  overflow: auto;
+  border: 1px solid #666;
+  background-color: #DDD;
+  font-family: monospace;
 }
 .cst-sync-options {
   border: 2px solid #DDDDDD;

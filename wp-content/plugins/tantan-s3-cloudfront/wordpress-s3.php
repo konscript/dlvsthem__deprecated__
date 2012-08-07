@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: Amazon S3 for WordPress
-Plugin URI: http://tantannoodles.com/toolkit/wordpress-s3/
-Description: Allows you to retrieves objects stored in Amazon S3 and post them in WordPress.
-Author: Joe Tan
-Version: 0.4
-Author URI: http://tantannoodles.com/
+Plugin Name: Amazon S3 for WordPress with CloudFront
+Plugin URI: http://jameslow.com/2011/10/12/amazon-s3-for-wordpress-with-cloudfront/
+Description: Uploads your wordpress media attachements to S3 with an option CloudFront distribution
+Author: James David Low (Original: Joe Tan)
+Version: 0.4.1.1
+Author URI: http://jameslow.com
 
 Copyright (C) 2008 Joe Tan
 
@@ -23,7 +23,10 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
 
+MODIFIED
+http://jameslow.com/2011/10/12/amazon-s3-for-wordpress-with-cloudfront/
 
+ORIGINAL
 Release Page:
 http://tantannoodles.com/toolkit/wordpress-s3/
 
