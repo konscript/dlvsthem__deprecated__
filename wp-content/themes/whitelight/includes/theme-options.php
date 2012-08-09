@@ -506,6 +506,12 @@ $options[] = array( "name" => "Portfolio Area Link URL (optional)",
 $options[] = array( "name" => "Content Area",
 					"type" => "subheading" );
 
+$options[] = array( "name" => "Blog Area Title Text",
+					"desc" => "Enter the title for the blog area alternate layout to be displayed on your homepage.",
+					"id" => $shortname."_blog_area_title",
+					"std" => "Some of our Blog Posts",
+					"type" => "text" );
+
 $options[] = array( "name" => "Enable Content Area",
                     "desc" => "Enable the content area on the homepage.",
                     "id" => $shortname."_blog_area",

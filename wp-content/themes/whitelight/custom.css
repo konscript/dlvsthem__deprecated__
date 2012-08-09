@@ -310,6 +310,80 @@ div.post.country .disclaimer ul li {
   background-clip: padding-box;
   padding: 2px 6px 3px 6px;
 }
+/*
+ * Vaccination recommendations template
+ **************************/.map-header {
+  display: block;
+  padding: 30px 0 0px 0;
+  margin: 0;
+  line-height: 34px;
+  font-size: 34px;
+  color: #000000;
+  font-weight: normal;
+  text-align: center;
+}
+.map-form-container {
+  text-align: center;
+  margin-top: 10px;
+}
+.map-form {
+  display: inline;
+}
+#country-selector {
+  width: 120px;
+}
+#map-wrapper {
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #74b6cf;
+  border-top: 1px solid #9acadc;
+  border-bottom: 1px solid #4ea2c2;
+  background-color: #74b6cf;
+  background-image: -moz-radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
+  background-image: -webkit-radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
+  background-image: -o-radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
+  background-image: -ms-radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
+  background-image: radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
+}
+#map-wrapper h3 {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  display: block;
+  padding: 30px 0 0px 0;
+  margin: 0;
+  line-height: 34px;
+  font-size: 34px;
+  color: black;
+  font-weight: normal;
+  text-align: center;
+}
+#map-continents #continents li .bg {
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+}
+#map-continents #continents li:hover .bg {
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+}
+/*
+ * Booking template
+ **************************/
 /**********************************************
  * Hide Search
  **********************************************/
@@ -327,9 +401,10 @@ div.post.country .disclaimer ul li {
   margin-top: 20px;
 }
 #navigation .nav > li:hover > a {
-  -webkit-transition: all all 0.2s;
-  -moz-transition: all all 0.2s;
-  transition: all all 0.2s;
+  -webkit-transition: all 0.2s 0.2s;
+  -moz-transition: all 0.2s 0.2s;
+  -o-transition: all 0.2s 0.2s;
+  transition: all 0.2s 0.2s;
   -moz-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -426,9 +501,10 @@ div.post.country .disclaimer ul li {
   #featured article header .calltoaction a:hover {
     background-color: #db2f2f;
     text-decoration: none;
-    -webkit-transition: all all 0.2s;
-    -moz-transition: all all 0.2s;
-    transition: all all 0.2s;
+    -webkit-transition: all 0.2s 0.2s;
+    -moz-transition: all 0.2s 0.2s;
+    -o-transition: all 0.2s 0.2s;
+    transition: all 0.2s 0.2s;
     -moz-transition: all 0.2s ease-in-out;
     -webkit-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
