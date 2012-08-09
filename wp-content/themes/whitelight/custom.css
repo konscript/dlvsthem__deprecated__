@@ -483,6 +483,22 @@ div.post.country .disclaimer ul li {
   font-size: 1em;
   font-weight: bold;
 }
+.home-section.count4 header {
+  display: none;
+}
+.home-section.count4 ul {
+  float: left;
+  width: 100%;
+}
+.home-section.count4 ul li {
+  float: left;
+  margin-right: 2%;
+  width: 23%;
+}
+.home-section.count4#portfolio .portfolio-item {
+  width: 100%;
+  margin: 0!important;
+}
 /********************************************** 
  * Blogpost area on homepage
  **********************************************/
