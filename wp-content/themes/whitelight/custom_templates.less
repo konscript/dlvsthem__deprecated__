@@ -1,3 +1,4 @@
+
 /*
  * Vaccination recommendations template
  **************************/ 
@@ -10,7 +11,7 @@
 		margin: 0;
 		line-height: 34px;
 		font-size: 34px;
-		color: @color_primary;
+		color: @color-primary;
 		font-weight: normal;
 		text-align: center;
 	}
@@ -28,6 +29,19 @@
 	@lightblue: #D4ECF5;
 	@darkblue: #74B6CF;
 	#map-wrapper {
+
+		h3 {
+			text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+			display: block;
+			padding: 30px 0 0px 0;
+			margin: 0;
+			line-height: 34px;
+			font-size: 34px;
+			color: black;
+			font-weight: normal;
+			text-align: center;			
+		}
+
 		.border-radius(3px);
 		border: 1px solid @darkblue;
 		border-top: 1px solid lighten(@darkblue, 10%);
@@ -45,7 +59,7 @@
 
 		#continents li .bg {
 			.opacity(0);
-			.transition(opacity);
+			//.transition(opacity, ease, 2s);
 		}
 		#continents li:hover .bg {
 			.opacity(1);
