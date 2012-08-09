@@ -3,6 +3,23 @@ WOO CUSTOM STYLESHEET (for DLVS)
 ---------------------*/
 
 /**
+ * PORTED FROM OLD TRAVEL VACCINATION
+ ************************************************/
+
+@color_secondary_b: #f6f6f6;    // White Dark
+@color_contrast_b:  #ee3124;    // Red Light
+@color_contrast:    darken(@color_contrast_b, 15%);     // Red
+@color_contrast_c:  lighten(@color_contrast_b, 10%);    // Red Lighter
+@color_secondary_c: #eee;           // White Darker
+
+// Typography
+@typography_family_primary: 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+@typography_family_secondary: Georgia, "Times New Roman", serif;
+@typography_size_normal: 11px;
+@typography_size_header: 161px;
+@typography_size_subheader: 141px;
+
+/**
  * Grid and Layout
  ************************************************/
 
@@ -65,7 +82,9 @@ WOO CUSTOM STYLESHEET (for DLVS)
  * Misc. (load compass modules)
  ************************************************/
 
-//@import "custom_templates.less";
+@import url(custom_elements.less);
+@import url(custom_utilities.less);
+@import url(custom_post_types.less);
 
 /**********************************************
  * Hide Search
