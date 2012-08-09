@@ -48,7 +48,7 @@
 					echo stripslashes( $woo_options['woo_footer_left_text'] );
 
 					// set linkedin follow button for flufighters only!
- 					if(strpos(get_bloginfo('url'), "flufighters") !== false){
+ 					if(dlvssite() == "flufighters"){
 						echo '<br><br><script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
 						<script type="IN/FollowCompany" data-id="2670047" data-counter="none"></script>';
 					}

@@ -358,6 +358,7 @@ h6 a:hover {
 }
 h1 {
   font-size: 2em;
+  margin-bottom: 1em;
 }
 h2 {
   font-size: 1.8em;
@@ -1174,7 +1175,7 @@ article.type-features header {
   margin: 0 0 1em;
 }
 article.type-features header h1 {
-  font-family: "Signika", sans-serif;
+  font-family: Georgia, serif;
 }
 article.type-features header h1 a {
   color: #252525;

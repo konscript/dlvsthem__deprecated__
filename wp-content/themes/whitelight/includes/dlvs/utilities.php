@@ -14,4 +14,19 @@ function slidedown($title, $content, $url = 0){
 			<h4><a href="'. $url .'">'.$title.'</a></h4>
 			<div>'.$content.'</div>';
 }
+
+// returns the name of the current dlvs site
+function dlvssite() {
+
+	$site = "";
+	if(strpos(get_bloginfo('url'), "flufighters") !== false){
+		$site = "flufighters"; 
+	} else if (strpos(get_bloginfo('url'), "dlvsdk") !== false || strpos(get_bloginfo('url'), "sikkerrejse") !== false) {
+		$site = "sikkerrejse";
+	} else if (strpos(get_bloginfo('url'), "dlvsuk") !== false || strpos(get_bloginfo('url'), "travelvaccination") !== false) {
+		$site = "travelvaccination";
+	}
+
+	return $site;
+}
 ?>
