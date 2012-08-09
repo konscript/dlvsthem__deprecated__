@@ -2,6 +2,9 @@
 WOO CUSTOM STYLESHEET (for DLVS)
 ---------------------*/
 /**
+ * PORTED FROM OLD TRAVEL VACCINATION
+ ************************************************/
+/**
  * Grid and Layout
  ************************************************/
 /**
@@ -13,6 +16,303 @@ WOO CUSTOM STYLESHEET (for DLVS)
 /**
  * Misc. (load compass modules)
  ************************************************/
+/*---------------------------------------------------
+    LESS Elements 0.6
+  ---------------------------------------------------
+    A set of useful LESS mixins by Dmitry Fadeyev
+    Special thanks for mixin suggestions to:
+      Kris Van Herzeele,
+      Benoit Adam,
+      Portenart Emile-Victor,
+      Ryan Faerman
+
+    More info at: http://lesselements.com
+-----------------------------------------------------*/
+/**
+ * Utilities (_utilities.less)
+ */
+a.button-book {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  position: relative;
+  width: 100%;
+  background-color: #B72020;
+  display: block;
+  float: left;
+  margin: 0 0 20px 0;
+  cursor: pointer;
+  border-top: 1px solid #f25e53;
+  border-bottom: 1px solid #88130b;
+}
+a.button-book:hover {
+  background-color: #DB2F2F;
+  border-top: 1px solid #cf1c10;
+  border-bottom: 1px solid #e72012;
+  color: #fff;
+  text-decoration: none;
+}
+a.button-book .button-book-title {
+  text-align: center;
+  color: #f6f6f6;
+  line-height: 1em;
+  font-weight: normal;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  letter-spacing: 0.05em;
+  font-size: 17px;
+  padding: 16px 24px 16px 24px;
+  margin: 0 auto;
+}
+body.home #column-right a.button-book {
+  width: 100%;
+}
+body.home #column-right a.button-book .button-book-title {
+  font-size: 22px;
+  padding: 25px 0 24px 34px;
+  margin: 0;
+}
+body.home #column-right a.button-book .button-book-meta {
+  padding: 20px 34px 20px 0;
+  float: right;
+  font-style: italic;
+  text-align: right;
+  line-height: 1.5em;
+  font-size: 10px;
+  text-transform: lowercase;
+  color: #ffffff;
+}
+a.button-book-step {
+  margin-top: 5px;
+}
+a.button-book-step .button-book-title {
+  font-size: 1em;
+}
+a.button-book-table {
+  height: 40px;
+  margin: 2px;
+}
+a.button-book-table .button-book-title {
+  font-size: 1em;
+  line-height: 40px;
+  padding: 0px 5px;
+}
+/*****
+	 * Table even/odd colored rows
+	 *************************/
+table.zebra {
+  width: 100%;
+  margin-bottom: 10px;
+  border-top: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+}
+table.zebra thead tr td {
+  font-weight: bold;
+}
+table.zebra td {
+  line-height: 25px;
+  padding: 5px 15px;
+  border-bottom: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
+}
+table.zebra tbody tr:nth-child(odd) {
+  background-color: #f6f6f6;
+}
+/*****
+	 * Sidebar
+	 *************************/
+.sidebar-menu {
+  padding-bottom: 20px;
+}
+.sidebar-image {
+  padding-bottom: 20px;
+}
+.sidebar-image img {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+#sidebar li.categories,
+#sidebar li.pagenav {
+  list-style-type: none;
+}
+#sidebar li.categories h2,
+#sidebar li.pagenav h2 {
+  display: none;
+}
+#sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#sidebar ul li {
+  display: inline;
+  height: 30px;
+  line-height: 30px;
+}
+#sidebar ul li a {
+  color: #000;
+  float: left;
+  text-decoration: none;
+  width: 100%;
+  background: url('img/submenu_off.gif') no-repeat;
+  background-position: 7px 50%;
+  text-indent: 25px;
+  border-bottom: 1px solid #eeeeee;
+  height: 30px;
+  overflow: hidden;
+}
+#sidebar ul li a:hover,
+#sidebar ul .current-menu-item a,
+#sidebar ul .current-cat a {
+  background: url('img/submenu_on.gif') no-repeat;
+  background-position: 0 50%;
+  text-decoration: none;
+  font-weight: normal;
+}
+/*****************************************************************
+ *	CUSTOM POST TYPES
+ *****************************************************************//*
+  * Clinic
+	**********************************/
+.post.clinic h1 {
+  margin-top: 10px;
+}
+.contact p.address {
+  background: url('img/icon-address-black-20px.png') no-repeat 2px center;
+}
+.contact p.telephone {
+  background: url('img/icon-telephone-20px.png') no-repeat left center;
+}
+.contact p.telephone,
+.contact p.address {
+  padding-left: 27px;
+  margin-bottom: 20px;
+  min-height: 20px;
+  line-height: 20px;
+}
+.gmap a {
+  float: left;
+}
+/**
+  * region
+  **********************************/
+div.post.region #country-selector {
+  width: 155px;
+}
+div.post.region .region-map {
+  display: block;
+  margin: 0 auto;
+}
+div.post.region .country {
+  display: block;
+  float: left;
+  width: 34px;
+  height: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 10px;
+}
+div.post.region .country img {
+  width: 100%;
+}
+/**
+  * country
+  **********************************/.post.country header {
+  float: left;
+}
+.country-meta-header {
+  text-align: center;
+  margin: 0 0 20px 0;
+  font-family: Georgia, "Times New Roman", serif;
+}
+.country-meta {
+  border: 1px solid #eeeeee;
+  display: block;
+  text-align: left;
+  line-height: 2em;
+  padding-bottom: 10px;
+}
+.country-meta td {
+  padding: 5px 10px 0 10px;
+}
+.country-flag {
+  text-align: right;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.country-flag img {
+  width: 100%;
+}
+div.post.country #vaccinations_groups {
+  width: 100%;
+  border-top: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
+}
+div.post.country table#vaccinations_groups thead tr td {
+  font-weight: bold;
+}
+div.post.country table#vaccinations_groups tr td:first-child {
+  text-align: left;
+}
+div.post.country table#vaccinations_groups tr td {
+  text-align: center;
+  padding: 5px 10px;
+  border-bottom: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+}
+div.post.country table#vaccinations_groups tr td img {
+  margin-top: 5px;
+  width: 18px;
+  height: 18px;
+}
+div.post.country table#vaccinations_groups tr td.vaccination-name {
+  width: 30%;
+}
+div.post.country .disclaimer {
+  color: #aaa;
+}
+div.post.country .disclaimer h3 {
+  margin-top: 0;
+}
+div.post.country .disclaimer ul {
+  list-style: disc;
+  margin: 10px 0;
+}
+div.post.country .disclaimer ul li {
+  list-style-position: inside;
+  text-indent: 1em;
+}
+/**
+* faq
+**********************************/.post.faq #searchFaq {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #bebebe;
+  background-color: #fff;
+  color: #000;
+  outline: none;
+}
+.post.faq #clearSearch {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 2px 6px 3px 6px;
+}
 /**********************************************
  * Hide Search
  **********************************************/
@@ -30,6 +330,9 @@ WOO CUSTOM STYLESHEET (for DLVS)
   margin-top: 20px;
 }
 #navigation .nav > li:hover > a {
+  -webkit-transition: all all 0.2s;
+  -moz-transition: all all 0.2s;
+  transition: all all 0.2s;
   -moz-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -126,6 +429,9 @@ WOO CUSTOM STYLESHEET (for DLVS)
   #featured article header .calltoaction a:hover {
     background-color: #db2f2f;
     text-decoration: none;
+    -webkit-transition: all all 0.2s;
+    -moz-transition: all all 0.2s;
+    transition: all all 0.2s;
     -moz-transition: all 0.2s ease-in-out;
     -webkit-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
