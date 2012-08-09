@@ -215,6 +215,7 @@ WOO CUSTOM STYLESHEET (for DLVS)
 	}
 	#featured article header {
 		text-shadow: none;
+		height: auto;
 	}
 	#featured article header h1 {
 		font-family: Georgia, serif;
@@ -224,6 +225,9 @@ WOO CUSTOM STYLESHEET (for DLVS)
 		font-family: 'Helvetica Neue', Helvetica, sans-serif;
 		font-size: 1em;
 		line-height: 1.5em;
+	}
+	.controls-container .flex-control-nav {
+		display: none;
 	}	
 }
 
@@ -238,7 +242,6 @@ WOO CUSTOM STYLESHEET (for DLVS)
 	left: 20px;
 	right: auto;
 }
-
 
 /********************************************** 
  * Features area on homepage
@@ -264,21 +267,25 @@ WOO CUSTOM STYLESHEET (for DLVS)
 	font-weight: bold;
 }
 
-.home-section.count4  {
-	header  { display: none; }
-	ul  {
-		float: left;
-		width: 100%;
-		li  {
+/* Only apply to iPad portrait and up */
+@media only screen and (min-width: 768px) {
+
+	.home-section.count4  {
+		header  { display: none; }
+		ul  {
 			float: left;
-			margin-right: 2%;
-			width: 23%;
-		}
-	}
-	&#portfolio  {
-		.portfolio-item {
 			width: 100%;
-			margin: 0!important;
+			li  {
+				float: left;
+				margin-right: 2%;
+				width: 23%;
+			}
+		}
+		&#portfolio  {
+			.portfolio-item {
+				width: 100%;
+				margin: 0!important;
+			}
 		}
 	}
 }
