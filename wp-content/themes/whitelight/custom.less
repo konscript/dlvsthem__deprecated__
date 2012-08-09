@@ -297,7 +297,7 @@ WOO CUSTOM STYLESHEET (for DLVS)
 }
 
 /********************************************** 
- * Blogpost area on homepage
+ * Alt Blogpost area on homepage (picture with news)
  **********************************************/
 
 .home-section#blog-alt {
@@ -321,28 +321,48 @@ WOO CUSTOM STYLESHEET (for DLVS)
 /* Only apply to iPad portrait and up */
 @media only screen and (min-width: 768px) {
 
-.home-section#blog-alt {
+	.home-section#blog-alt {
+
+		header {
+			width: 48%;
+			margin-right: 4%
+		}
+
+		ul {
+			width: 48%;
+
+			li {
+				width: 46%;
+				margin-right: 8%;
+			}
+
+			li.last {
+				margin-right: 0;
+			}
+		}
+	}
+
+}
+
+/********************************************** 
+ * Blogpost area on homepage (interactive map)
+ **********************************************/
+
+.home-section#blog {
+	display: block;
+	padding-bottom: 2em;
 
 	header {
-		width: 48%;
-		margin-right: 4%
+		float: left;		
+		width: 66%;
+		margin-right: 4%;
 	}
-
-	ul {
-		width: 48%;
-
-		li {
-			width: 46%;
-			margin-right: 8%;
-		}
-
-		li.last {
-			margin-right: 0;
-		}
+	ul.entries {
+		float: left;
+		width: 30%;
 	}
 }
 
-}
 
 /********************************************** 
  * Streamer (mobile app) area on homepage
@@ -350,7 +370,7 @@ WOO CUSTOM STYLESHEET (for DLVS)
 
 // Streamer
 .home-section#streamer {
-	//margin-bottom: -26px;
+	margin-bottom: 0;
 	border-bottom: none;
 
 	h1 {

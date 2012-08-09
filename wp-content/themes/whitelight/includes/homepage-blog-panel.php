@@ -14,16 +14,18 @@
 					'blog_area_content' => 'blog',
 					'blog_area_title' => '',
 					'blog_area_entries' => 3,
-					'blog_area_page' => ''
+					'blog_area_page' => '',
+					'blog_area_message' => '',
+					'blog_area_link_text' => __( 'View all our blog posts', 'woothemes' ),
+					'blog_area_link_URL' => ''					
 					);
 					
 	$settings = woo_get_dynamic_values( $settings );
 		
-?>			
-		<div class="home-blog fix">
-			
-			<section id="" class=""> 
+?>						
+		<section id="blog" class="home-section fix"> 
 
+			<header class="block">
 				<div id="map-wrapper">
 
 					<h3><?php echo $settings['blog_area_title'] ?></h3>
@@ -58,28 +60,29 @@
 					 </ul>
 					</div>
 
-				</div>		
+					<script type="text/javascript">
+					jQuery.noConflict();
+					(function($){
+						$(document).ready(function() {	
+							$('#map-continents').cssMap({'size' : 540});
+						});
+					})(jQuery);
+						
+					</script>
 
-				<script type="text/javascript">
-				jQuery.noConflict();
-				(function($){
-					$(document).ready(function() {	
-						$('#map-continents').cssMap({'size' : 540});
-					});
-				})(jQuery);
-					
-				</script>
+					<?php wp_enqueue_script('jquery.cssmap.js', get_template_directory_uri() . '/includes/js/dlvs/jquery.cssmap.js' );?>
+					<link rel="stylesheet" type="text/css" media="screen,projection" href="<?php echo get_template_directory_uri(); ?>/includes/css/map-continents/cssmap-continents.css" />
 
+				</div>
 
-				<?php wp_enqueue_script('jquery.cssmap.js', get_template_directory_uri() . '/includes/js/dlvs/jquery.cssmap.js' );?>
-				<link rel="stylesheet" type="text/css" media="screen,projection" href="<?php echo get_template_directory_uri(); ?>/includes/css/map-continents/cssmap-continents.css" />
+				<p><?php echo stripslashes( $settings['blog_area_message'] ); ?></p>
+				<a class="more" href="<?php if ( $settings['blog_area_link_URL'] != '' ) echo $settings['blog_area_link_URL']; else echo next_posts(); ?>" title="<?php echo stripslashes( $settings['blog_area_link_text'] ); ?>"><?php echo stripslashes( $settings['blog_area_link_text'] ); ?></a>
 			
-			<?php woo_pagenav();?>
-        	        
-			</section><!-- /#main -->
-			<?php /* Remove categories filter for sidebar widget */ remove_filter( 'pre_get_posts', 'woo_exclude_categories_homepage' ); ?>
-        	<?php get_sidebar(); ?>
-        	
-    	</div>
-    
+			</header>
+			
+			<ul class="entries">
+				<li>Content on the way..</li>
+			</ul>
+		        	        
+		</section><!-- /#main -->
     	<?php wp_reset_query(); ?>

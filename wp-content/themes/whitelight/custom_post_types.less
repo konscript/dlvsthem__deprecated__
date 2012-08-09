@@ -57,25 +57,36 @@
 		}
 
 		.country-wrapper {
-			// @include clearfix;
+			overflow: hidden;
 			//margin-top: 20px;
-			//border-left: 1px solid $color-secondary-c;
-			//border-top: 1px solid $color-secondary-c;			
+			border-left: 1px solid @color-secondary-c;
+			border-top: 1px solid @color-secondary-c;			
 		}
 
 		.country {
 			display: block;
 			float: left;
-			width: 34px;
-			height: 24px;
-			white-space: nowrap;
+			width: 120px;
+			height: 30px;
+			//white-space: nowrap;
 			overflow: hidden;
-			//border-right: 1px solid $color-secondary-c;
-			//border-bottom: 1px solid $color-secondary-c;
+			border-right: 1px solid @color-secondary-c;
+			border-bottom: 1px solid @color-secondary-c;
 			padding: 10px;
 
 			img {
-				width: 100%;
+				width: 40px;
+				float: left;
+				margin-right: 10px;
+			}
+
+			span {
+				display: block;
+				width: 70px;
+				float: left;
+				line-height: 14px;
+				height: 28px;
+				overflow: hidden;
 			}
 		}
 

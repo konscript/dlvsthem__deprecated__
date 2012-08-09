@@ -36,8 +36,8 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 
 						<span> for at lære mere om landet og anbefalede vaccinationer.</span>
 
-						<img class="region-map" src="<?php bloginfo('template_directory'); ?>/img/continents-<?php echo basename(get_permalink()); ?>.png" alt="<?php echo basename(get_permalink()); ?>" />
-		      	
+						<!-- <img class="region-map" src="<?php bloginfo('template_directory'); ?>/img/continents-<?php echo basename(get_permalink()); ?>.png" alt="<?php echo basename(get_permalink()); ?>" /> -->
+		      			<br /><br />
 						<div class="country-wrapper">
 						<?php
 
@@ -52,6 +52,7 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 							if(get_field('flag', $country->ID)) { ?>
 							<a href="<?php echo get_permalink( $country->ID ); ?>" class="country" title="<?php echo $country->post_title; ?>">
 								<img src="<?php the_field('flag', $country->ID); ?>" alt="<?php echo $country->post_title; ?>" />
+								<span><?php echo $country->post_title; ?></span>
 							</a>
 						<?php } endforeach; ?>
 						</div>
