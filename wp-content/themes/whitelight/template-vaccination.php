@@ -6,7 +6,6 @@
 		<?php //sidebar(true, true, false); ?>
 		<section id="main" class="fullwidth">
 			<header><h1><?php the_title(); ?></h1></header>
-			<br />
 			<?php while ( have_posts() ) { the_post(); $count++;
 				the_content(); 
 			}?>	

@@ -123,6 +123,10 @@ table.zebra tbody tr:nth-child(odd) {
 /*****
 	 * Sidebar
 	 *************************/
+#sidebar .widget_nav_menu {
+  overflow: hidden;
+  padding-top: 19px;
+}
 .sidebar-menu {
   padding-bottom: 20px;
 }
@@ -166,6 +170,8 @@ table.zebra tbody tr:nth-child(odd) {
   border-bottom: 1px solid #eeeeee;
   height: 30px;
   overflow: hidden;
+  padding: 0;
+  line-height: inherit;
 }
 #sidebar ul li a:hover,
 #sidebar ul .current-menu-item a,
