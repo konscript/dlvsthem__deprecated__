@@ -32,16 +32,16 @@ $sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="' . ge
 						// some text about the clinic
 						echo the_content();					
 						?>     					
-						<br />
 						<div class="contact">	
 							<p class="header"></p>
 							<p class="address"><?php the_field('address'); ?><br /><?php the_field('city'); ?></p>					
 							<p class="telephone">Telefon: <?php the_field('phone_number'); ?></p>
-						</div>	
-						
+						</div>
+
 						<?php $weekdays = array("monday", "tuesday", "wednesday", "thursday", "friday", "saturday"); ?>						
 						<div class="opening_hours">	
-							<p class="header"><strong>Åbningstiderne for klinikken tilpasses efter behov.</strong></p>
+							<strong>Åbningstiderne for klinikken tilpasses efter behov:</strong>
+							<br /><br />
 							<table class="zebra">
 								<?php	foreach($weekdays as $weekday): ?>
 										
@@ -54,7 +54,21 @@ $sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="' . ge
 							</table>			
 						</div>
 						
-						<div class="gmap"><?php the_field('map'); ?></div>
+						<!--- <div class="gmap"><?php the_field('map'); ?></div> -->
+						<br />
+						<strong>Se klinikken på kort:</strong>
+						<br /><br />
+						
+						<?php 
+							$link_address = str_replace("\n", " ", strip_tags(get_field('address')));
+							$link_city = str_replace("\n", "", strip_tags(get_field('city')));
+						?>
+
+						<iframe width="709" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?q=<?php echo $link_address.$link_city; ?>&amp;ie=UTF8&amp;output=embed"></iframe>
+						<br />
+						<a href="https://maps.google.com/?q=<?php echo $link_address.$link_city; ?>" target="_blank">Vis stort kort</a>
+						<br />
+						<a href="http://www.rejseplanen.dk/bin/query.exe/mn?ZADR=1&Z=<?php echo $link_address.$link_city; ?>" target="_blank">Tilgang med offentlig transport</a>
 					</div>
 				</div><!--#end post-->
 			<?php endwhile; endif; ?>

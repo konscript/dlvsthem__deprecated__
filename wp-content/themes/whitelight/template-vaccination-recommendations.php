@@ -16,7 +16,6 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 		<section id="main" class="col-left">
 			
 			<header><h1><?php the_title(); ?></h1></header>
-			<br />
 			<?php while ( have_posts() ) { the_post(); $count++;
 				the_content(); 
 			}?>	

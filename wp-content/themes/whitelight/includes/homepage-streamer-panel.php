@@ -5,7 +5,7 @@
 	
 ?>
 	<section id="streamer" class="home-section fix">
-		<h1><span class="highlight"><?php echo __("Ny mobil app", "dlvs"); ?></span>
+		<h1><a href="<?php bloginfo('url'); ?>/app/" class="highlight"><?php echo __("Ny mobil app", "dlvs"); ?></a>
 			<span><?php echo __(", helt gratis", "dlvs"); ?></span><br /> 
 			<span><?php echo __("- tag lægen med på rejsen.","dlvs"); ?></span>
 		</h1>
@@ -15,7 +15,7 @@
 				<a href="http://itunes.apple.com/dk/app/l-gens-rejserad/id505336046?mt=8"><img src="<?php bloginfo('template_directory'); ?>/images/dlvs/app-iphone-small.png" alt="iPhone App Store" /></a>
 				<a href="https://market.android.com/details?id=lbi.android.dlvs"><img src="<?php bloginfo('template_directory'); ?>/images/dlvs/app-android-small.png" alt="Android Market" /></a>
 			</div>			
-			<a href="http://itunes.apple.com/dk/app/l-gens-rejserad/id505336046?mt=8" class="iphone-model">
+			<a href="<?php bloginfo('url'); ?>/app/" class="iphone-model">
 				<img src="<?php bloginfo('template_directory'); ?>/images/dlvs/frontpage-iphone.png" alt="iPhone app" />
 			</a>
 		</div>

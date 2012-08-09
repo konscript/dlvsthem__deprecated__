@@ -123,19 +123,21 @@ $sidebar_country_meta .=
 							<?php endif; ?>			
 						<?php endforeach; ?>	
 						</tbody>
-					</table>		
-					<br />
-					<div class="disclaimer">
-						The vaccination list on this page is for general guidance, and it may vary from your actual needs. Therefore, when you book time for vaccinations or malaria counseling, you will receive a risk assessment form in your e-mail with questions about:
-						<ul>
-							<li>Your itinerary (“where are you going?”)</li>
-							<li>The timing of your journey (“when are you going? Do you have time to complete the recommended course?)</li>
-							<li>The nature of your journey (“e.g. backpacking or 5 star hotel?”)</li>
-							<li>Your previous medical history</li>
-							<li>Consideration of any full or partially completed courses of previous vaccines</li>
-						</ul>
-						Bring the form to the Travel Nurse upon arrival at our clinic and she will make sure you are immunized and counseled before your travels.
-					</div>
+					</table>
+					<?php if(dlvssite() == "flufighters") { ?>
+						<br />
+						<div class="disclaimer">
+							The vaccination list on this page is for general guidance, and it may vary from your actual needs. Therefore, when you book time for vaccinations or malaria counseling, you will receive a risk assessment form in your e-mail with questions about:
+							<ul>
+								<li>Your itinerary (“where are you going?”)</li>
+								<li>The timing of your journey (“when are you going? Do you have time to complete the recommended course?)</li>
+								<li>The nature of your journey (“e.g. backpacking or 5 star hotel?”)</li>
+								<li>Your previous medical history</li>
+								<li>Consideration of any full or partially completed courses of previous vaccines</li>
+							</ul>
+							Bring the form to the Travel Nurse upon arrival at our clinic and she will make sure you are immunized and counseled before your travels.
+						</div>
+					<?php } ?>
 					
 					<!-- <h3>FAQ</h3> -->
 					<?php /*

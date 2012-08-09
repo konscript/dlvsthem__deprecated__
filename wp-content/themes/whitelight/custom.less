@@ -238,6 +238,10 @@ WOO CUSTOM STYLESHEET (for DLVS)
 	}
 }
 
+.home #intro h1 {
+	margin-bottom: 0;
+}
+
 .controls-container .flex-control-nav {
 	left: 20px;
 	right: auto;
@@ -368,33 +372,40 @@ WOO CUSTOM STYLESHEET (for DLVS)
 /* Only apply to iPad portrait and up */
 @media only screen and (min-width: 768px) {
 
-.home-section#streamer {
+	.home-section#streamer {
 
-	h1 {
-		float: left;		
-		margin-bottom: 1.5em;
-	}
-
-	.phone {
-		float: right;
-
-		a.iphone-model {
-			float: left;
-			margin-top: -90px;
+		h1 {
+			float: left;		
+			margin-bottom: 1.5em;
 		}
 
-		.icons {
-			float: left;
-			margin: 0 40px;
+		.phone {
+			float: right;
 
-			a {
-				display: block;
-				margin: 5px 0;
+			a.iphone-model {
+				float: left;
+				margin-top: -90px;
 			}
-		}		
+
+			.icons {
+				float: left;
+				margin: 0 40px;
+
+				a {
+					display: block;
+					margin: 5px 0;
+				}
+			}		
+		}
 	}
 }
 
+/********************************************** 
+ * Footer
+ **********************************************/
+
+#footer-widgets .widget {
+	margin-bottom: 0;
 }
 
 /********************************************** 
