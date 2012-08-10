@@ -9,7 +9,7 @@ $args = array(
 $sidebar_menu = wp_list_pages( $args ); 
 
 $clinic = basename(get_permalink());
-$sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="' . get_bloginfo('wpurl') . '/booking/clinic/' . get_field('xmedicus_clinic_id') . '"><div class="button-book-title">Bestil vaccination</div></a>';
+$sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="' . get_bloginfo('wpurl') . '/booking/clinic/' . get_field('xmedicus_id') . '"><div class="button-book-title">Bestil vaccination</div></a>';
 ?>
 
 <div id="content">
