@@ -17,11 +17,26 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 					<header><h1><?php the_title(); ?></h1></header>
 					<div class="post-content">
 
+
+<?php 
+$region_serialized = get_post_custom_values('countries');
+
+try {
+	$region = unserialize($region_serialized[0]);
+	if($region === false){
+        throw new Exception('Not a serialized array');		
+	}
+} catch (Exception $e) {
+	echo "lol";
+	$region = $region_serialized[0];
+}
+//debug($region);
+$countries = getCountriesArray($region);
+?>
+
 						<form method="GET" class="map-form" action="<?php bloginfo('wpurl'); ?>">
 						  <select name="Country" id="country-selector">
 					    <option value="" selected="selected">Vælg land</option>
-							<?php $region = get_post_custom_values('countries');
-										$countries = getCountries($region[0]); ?>	
 							<?php foreach($countries as $country): ?>
 								<?php 
 									$country_name = $country->post_title;
@@ -40,12 +55,6 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 		      			<br /><br />
 						<div class="country-wrapper">
 						<?php
-
-						// get ids of countries in region
-						$region = get_post_custom_values('countries');
-						
-						// get countries
-						$countries = getCountries($region[0]);
 
 						// output countries in region
 						foreach($countries as $country):
