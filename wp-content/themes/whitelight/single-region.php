@@ -17,22 +17,19 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 					<header><h1><?php the_title(); ?></h1></header>
 					<div class="post-content">
 
+						<?php 
+						$region_serialized = get_post_custom_values('countries');
 
-<?php 
-$region_serialized = get_post_custom_values('countries');
-
-try {
-	$region = unserialize($region_serialized[0]);
-	if($region === false){
-        throw new Exception('Not a serialized array');		
-	}
-} catch (Exception $e) {
-	echo "lol";
-	$region = $region_serialized[0];
-}
-//debug($region);
-$countries = getCountriesArray($region);
-?>
+						try {
+							$region = unserialize($region_serialized[0]);
+							if($region === false){
+						        throw new Exception('Not a serialized array');		
+							}
+						} catch (Exception $e) {
+							$region = $region_serialized[0];
+						}
+						$countries = getCountriesArray($region);
+						?>
 
 						<form method="GET" class="map-form" action="<?php bloginfo('wpurl'); ?>">
 						  <select name="Country" id="country-selector">

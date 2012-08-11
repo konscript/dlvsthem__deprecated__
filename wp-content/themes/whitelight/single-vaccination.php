@@ -34,7 +34,8 @@
 						<?php echo slidedown("Hvem bør ikke vaccineres?", get_field("who_should_not_be_vaccinated")); ?>
 						<?php echo slidedown("Graviditet og amning", get_field("pregnancy_and_lactation")); ?>
 						<?php echo slidedown("Beskyttelsestid", get_field("duration_of_immunity")); ?>
-						<?php echo slidedown("Bivirkninger", get_field("side_effects")); ?>							                 
+						<?php echo slidedown("Bivirkninger", get_field("side_effects")); ?>
+						<?php echo slidedown("Pris", get_field("price")); ?>						                 
 					</div>														
 			    </div><!--#end post-->
 	        <?php endwhile; endif; ?>
