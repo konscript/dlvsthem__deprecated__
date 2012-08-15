@@ -83,7 +83,7 @@
 			<ul class="entries">
 				<li>
 					<img src="<?php bloginfo('wpurl'); ?>/wp-content/themes/whitelight/styles/red/ico-more.png" />
-					<h3><a href="<?php bloginfo('wpurl'); ?>/rejseraad">Ofte stillede spørgsmål</a></h3>
+					<h3><a href="<?php bloginfo('wpurl'); ?>/faq">Ofte stillede spørgsmål</a></h3>
 					<p>Vaccination kan være en jungle at finde rundt i - hvilke vacciner skal jeg have, hvornår og hvordan? Få hjælp her.</p>
 				</li>
 				<li>
