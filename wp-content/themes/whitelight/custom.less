@@ -354,12 +354,42 @@ WOO CUSTOM STYLESHEET (for DLVS)
 
 	header {
 		float: left;		
-		width: 66%;
-		margin-right: 4%;
+		width: 68%;
+		margin-right: 2%;
 	}
 	ul.entries {
+		margin-top: 15px;
 		float: left;
 		width: 30%;
+
+		li {
+			width: 100%;
+			position: relative;
+			min-height: 110px;
+
+			img {
+				position: absolute;
+				left: 0;
+			}
+			h3 {
+				position: absolute;
+				left: 45px;
+				top: 7px;
+
+				a {
+					font-weight: normal;
+					font-style: italic;
+					font-family: @typography-family-secondary;
+					font-size: 1.1em;	
+					color: black;				
+				}
+			}
+			p {
+				position: absolute;
+				top: 30px;
+				left: 45px;
+			}
+		}
 	}
 }
 
