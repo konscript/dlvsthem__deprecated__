@@ -309,7 +309,7 @@ div.post.country .disclaimer ul li {
 }
 /**
 * faq
-**********************************/.post.faq #searchFaq {
+**********************************/.faq #searchFaq {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -317,13 +317,14 @@ div.post.country .disclaimer ul li {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   width: 200px;
-  padding: 10px;
+  position: relative;
   border: 1px solid #bebebe;
   background-color: #fff;
   color: #000;
   outline: none;
+  margin-top: 10px;
 }
-.post.faq #clearSearch {
+.faq #clearSearch {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -331,6 +332,10 @@ div.post.country .disclaimer ul li {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   padding: 2px 6px 3px 6px;
+}
+.faq h3 {
+  font-size: 1em;
+  margin: 15px 0;
 }
 /*
  * Vaccination recommendations template
