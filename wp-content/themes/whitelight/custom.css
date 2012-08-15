@@ -503,7 +503,7 @@ div.post.country .disclaimer ul li {
   #featured article header .entry {
     font-family: 'Helvetica Neue', Helvetica, sans-serif;
     line-height: 1.5em;
-    color: #585858;
+    color: black;
   }
   #featured article header .calltoaction {
     position: absolute;
@@ -571,12 +571,15 @@ div.post.country .disclaimer ul li {
  **********************************************/
 .home-section#features li h2 a {
   font-weight: normal;
-  font-style: italic;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.1em;
 }
+.home-section#features li p {
+  width: 80%;
+}
 .home-section#features li p img {
   margin-right: 15px;
+  margin-bottom: 40px;
 }
 .home-section li h2 {
   margin-bottom: 1em;
@@ -657,16 +660,15 @@ div.post.country .disclaimer ul li {
 }
 .home-section#blog ul.entries li img {
   position: absolute;
-  left: 0;
+  left: 5px;
 }
 .home-section#blog ul.entries li h3 {
   position: absolute;
-  left: 45px;
-  top: 7px;
+  left: 30px;
 }
 .home-section#blog ul.entries li h3 a {
   font-weight: normal;
-  font-style: italic;
+  text-decoration: underline;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.1em;
   color: black;
@@ -674,7 +676,7 @@ div.post.country .disclaimer ul li {
 .home-section#blog ul.entries li p {
   position: absolute;
   top: 30px;
-  left: 45px;
+  left: 30px;
 }
 /********************************************** 
  * Streamer (mobile app) area on homepage
@@ -722,6 +724,7 @@ div.post.country .disclaimer ul li {
  **********************************************/
 #footer-widgets .widget {
   margin-bottom: 0;
+  color: white;
 }
 /********************************************** 
  * Mixins
