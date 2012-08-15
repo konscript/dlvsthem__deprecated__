@@ -83,12 +83,12 @@
 			<ul class="entries">
 				<li>
 					<img src="<?php bloginfo('wpurl'); ?>/wp-content/themes/whitelight/images/dlvs/logo-heartonly-gray.png" />
-					<h3><a href="<?php bloginfo('wpurl'); ?>/traveladvice">Ofte stillede spørgsmål</a></h3>
+					<h3><a href="<?php bloginfo('wpurl'); ?>/rejseraad">Ofte stillede spørgsmål</a></h3>
 					<p>Vaccination kan være en jungle at finde rundt i - hvilke vacciner skal jeg have, hvornår og hvordan? Få hjælp her.</p>
 				</li>
 				<li>
 					<img src="<?php bloginfo('wpurl'); ?>/wp-content/themes/whitelight/images/dlvs/logo-heartonly-gray.png" />
-					<h3><a href="<?php bloginfo('wpurl'); ?>/traveladvice/malaria">Malaria</a></h3>
+					<h3><a href="<?php bloginfo('wpurl'); ?>/rejseraad/malaria">Malaria</a></h3>
 					<p>Hvert år er der omkring 100 danskere som smittes med malaria på rejser. Lær hvordan du undgår at blive smittet.</p>
 				</li>
 				<li>
