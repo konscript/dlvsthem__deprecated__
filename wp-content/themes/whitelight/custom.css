@@ -425,7 +425,6 @@ div.post.country .disclaimer ul li {
  * Main Navigaton
  **********************************************/
 #navigation ul#main-nav {
-  float: right;
   margin-top: 20px;
 }
 #navigation .nav > li:hover > a {
