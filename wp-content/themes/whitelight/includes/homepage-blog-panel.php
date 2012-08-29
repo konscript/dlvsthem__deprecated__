@@ -81,10 +81,15 @@
 			</header>
 			
 			<ul class="entries">
-				<li>
+				<!-- <li>
 					<img src="<?php bloginfo('wpurl'); ?>/wp-content/themes/whitelight/styles/red/ico-more.png" />
 					<h3><a href="<?php bloginfo('wpurl'); ?>/faq">Ofte stillede spørgsmål</a></h3>
 					<p>Vaccination kan være en jungle at finde rundt i - hvilke vacciner skal jeg have, hvornår og hvordan? Få hjælp her.</p>
+				</li> -->
+				<li>
+					<img src="<?php bloginfo('wpurl'); ?>/wp-content/themes/whitelight/styles/red/ico-more.png" />
+					<h3><a target="_blank" href="http://www.hpvvaccination.dk">HPV Vaccination</a></h3>
+					<p>Hvert år er der omkring 100 danskere som smittes med malaria på rejser. Lær hvordan du undgår at blive smittet.</p>
 				</li>
 				<li>
 					<img src="<?php bloginfo('wpurl'); ?>/wp-content/themes/whitelight/styles/red/ico-more.png" />

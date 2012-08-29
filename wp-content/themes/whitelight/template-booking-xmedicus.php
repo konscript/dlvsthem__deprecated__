@@ -1,4 +1,4 @@
-<?php /* Template Name: Booking */ ?>
+<?php /* Template Name: Booking-Xmedicus */ ?>
 <?php get_header(); ?>
 <div id="content">
 	<div class="page col-full">
