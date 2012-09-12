@@ -14,7 +14,6 @@ class Cst {
 
 	function __construct() {
 		$this->connectionType = get_option('cst-cdn');
-		$this->createConnection();
 		add_action('admin_menu', array($this, 'createPages'));
 
 		// Create nonce
@@ -22,39 +21,76 @@ class Cst {
 
 		// Enqueue files
 		add_action('admin_init', array($this, 'enqueueFiles'));
+
+		// Add action for image uploads
+		add_action('wp_generate_attachment_metadata', array($this, 'uploadMedia'));
 	}
 
 	/**
 	 * Initialises the connection to the CDN
 	 * 
 	 */
-	private function createConnection() {
+	public function createConnection() {
 		require_once CST_DIR.'lib/pages/Options.php';
 		if ($this->connectionType == 'S3') {
 			require_once CST_DIR.'lib/api/S3.php';
 			$awsAccessKey = get_option('cst-s3-accesskey');
 			$awsSecretKey = get_option('cst-s3-secretkey');
 			$this->cdnConnection = new S3($awsAccessKey, $awsSecretKey);
+			if (@$this->cdnConnection->listBuckets() === false) {
+				CST_page::$messages[] = 'S3 connection error, please check details';
+			}
 		} else if ($this->connectionType == 'FTP') {
-			$this->cdnConnection = ftp_connect(get_option('cst-ftp-server'), get_option('cst-ftp-port'));
-			if ($this->cdnConnection === false) {
-				CST_Page::$messages[] = 'FTP connection error, please check details.';
-			} else {
-				if (ftp_login($this->cdnConnection, get_option('cst-ftp-username'), get_option('cst-ftp-password')) === false) {
-					CST_Page::$messages[] = 'FTP login error, please check details.';
+			if (get_option('cst-ftp-sftp') == 'yes') {
+				$connection = @ssh2_connect(get_option('cst-ftp-server'), get_option('cst-ftp-port'));
+				if ($connection === false) {
+					CST_Page::$messages[] = 'SFTP connection error, please check details.';
+				} else {
+					if (@ssh2_auth_password($connection, get_option('cst-ftp-username'), get_option('cst-ftp-password'))) {
+						$this->cdnConnection = $connection;
+					} else {
+						CST_Page::$messages[] = 'SFTP username/password authentication failed, please check details.';
+					}
 				}
-				$this->ftpHome = ftp_pwd($this->cdnConnection);
+			} else {
+				$this->cdnConnection = ftp_connect(get_option('cst-ftp-server'), get_option('cst-ftp-port'), 30);
+				if ($this->cdnConnection === false) {
+					CST_Page::$messages[] = 'FTP connection error, please check details.';
+				} else {
+					if (ftp_login($this->cdnConnection, get_option('cst-ftp-username'), get_option('cst-ftp-password')) === false) {
+						CST_Page::$messages[] = 'FTP login error, please check details.';
+					}
+					$this->ftpHome = ftp_pwd($this->cdnConnection);
+				}
 			}
 		} else if ($this->connectionType == 'Cloudfiles') {
 			require_once CST_DIR.'/lib/api/cloudfiles.php';
 			try {
-				$cfAuth = new CF_Authentication(get_option('cst-cf-username'), get_option('cst-cf-api'));
+				if (get_option('cst-cf-region') == 'uk') {
+					$region = UK_AUTHURL;
+				} else {
+					$region = US_AUTHURL;
+				}
+				$cfAuth = new CF_Authentication(get_option('cst-cf-username'), get_option('cst-cf-api'), NULL, $region);
 				$cfAuth->authenticate();
 				$this->cdnConnection = new CF_Connection($cfAuth);
 				$this->cdnConnection = $this->cdnConnection->create_container(get_option('cst-cf-container'));
 			} catch (Exception $e) {
 				CST_Page::$messages[] = 'Cloudfiles connection error, please check details.';
 			}
+		} else if ($this->connectionType == 'WebDAV') {
+			require_once CST_DIR.'lib/api/webdav/Sabre/autoload.php';
+			$settings = array(
+				'baseUri' => get_option('cst-webdav-host'),
+				'userName' => get_option('cst-webdav-username'),
+				'password' => get_option('cst-webdav-password'),
+			);
+			$client = new Sabre_DAV_Client($settings);
+			$response = $client->request('GET');
+			if ($response['statusCode'] >= 400) {
+				CST_Page::$messages[] = 'WebDAV connection error, server responded with code '.$response['statusCode'].'.';
+			}
+			$this->cdnConnection = $client;
 		}
 	}
 
@@ -64,7 +100,7 @@ class Cst {
 	 * @param $file string path to the file to push
 	 * @param $remotePath string path to the remote file
 	 */
-	private function pushFile($file, $remotePath) {
+	public function pushFile($file, $remotePath) {
 		if ($this->connectionType == 'S3') {
 			// Puts a file to the bucket
 			// putObjectFile(localName, bucketName, remoteName, ACL)
@@ -75,31 +111,57 @@ class Cst {
 			}
 			$this->cdnConnection->putObjectFile($file, $bucketName, $remotePath, S3::ACL_PUBLIC_READ);
 		} else if ($this->connectionType == 'FTP') {
-			$initDir = get_option('cst-ftp-dir');
-			if ($initDir[0] != '/') {
-				update_option('cst-ftp-dir', '/'.$initDir);
+			if (get_option('cst-ftp-sftp') == 'yes') {
+				// Create directory for the file
+				$pathParts = explode('/', $remotePath);
+				$fileName = array_pop($pathParts);
+				$remoteDirectory = implode('/', $pathParts);
+				ssh2_sftp_mkdir(ssh2_sftp($this->cdnConnection), get_option('cst-ftp-dir').'/'.$remoteDirectory, 0777, true);
+
+				ssh2_scp_send($this->cdnConnection, $file, get_option('cst-ftp-dir').'/'.$remotePath);
+			} else {
 				$initDir = get_option('cst-ftp-dir');
-			}
-			// Creates the directories
-			ftp_chdir($this->cdnConnection, $this->ftpHome.$initDir);
-			$remotePathExploded = explode('/', $remotePath);
-			$filename = array_pop($remotePathExploded);
-			foreach($remotePathExploded as $dir) {
-				$rawlist = ftp_rawlist($this->cdnConnection, $dir);
-				if (empty($rawlist)) {
-					ftp_mkdir($this->cdnConnection, $dir);
+				if ($initDir[0] != '/') {
+					update_option('cst-ftp-dir', '/'.$initDir);
+					$initDir = get_option('cst-ftp-dir');
 				}
-				ftp_chdir($this->cdnConnection, $dir);
+				// Creates the directories
+				ftp_chdir($this->cdnConnection, $this->ftpHome.$initDir);
+				$remotePathExploded = explode('/', $remotePath);
+				$filename = array_pop($remotePathExploded);
+				foreach($remotePathExploded as $dir) {
+					$rawlist = ftp_rawlist($this->cdnConnection, $dir);
+					if (empty($rawlist)) {
+						ftp_mkdir($this->cdnConnection, $dir);
+					}
+					ftp_chdir($this->cdnConnection, $dir);
+				}
+				// Uploads files
+				ftp_put($this->cdnConnection, $filename, $file, FTP_ASCII);
 			}
-			// Uploads files
-			ftp_put($this->cdnConnection, $filename, $file, FTP_ASCII);
 		} else if ($this->connectionType == 'Cloudfiles') {
-			require_once CST_DIR.'etc/mime.php';
-			global $mime_types;
+			require CST_DIR.'etc/mime.php';
 			$object = $this->cdnConnection->create_object($remotePath);
 			$extension = pathinfo($file, PATHINFO_EXTENSION);
 			$object->content_type = $mime_types[$extension];
 			$result = $object->load_from_filename($file);
+		} else if ($this->connectionType == 'WebDAV') {
+			// Ensure directory exists, create it otherwise
+			$remotePathExploded = explode('/', $remotePath);
+			$filename = array_pop($remotePathExploded);
+			$currentPath = '';
+			foreach ($remotePathExploded as $path) {
+				try {
+					$response = $this->cdnConnection->request('MKCOL', get_option('cst-webdav-basedir').'/'.$currentPath.'/'.$path);
+				} catch (Exception $e) {
+					echo 'An error occured while attempting to sync to WebDAV. Please report this to <a href="http://github.com/fubralimited/CDN-Sync-Tool/issues">GitHub</a>';
+					var_dump($e);
+					var_dump($response);
+					exit;
+				}
+				$currentPath .= '/'.$path;
+			}
+			$this->cdnConnection->request('PUT', get_option('cst-webdav-basedir').'/'.$remotePath, file_get_contents($file));
 		}
 	}
 
@@ -283,6 +345,15 @@ class Cst {
 	public function syncFiles() {
 		global $wpdb;
 
+		$this->createConnection();
+
+		if (isset(CST_Page::$messages) && !empty(CST_Page::$messages)) {
+			foreach (CST_Page::$messages as $message) {
+				echo $message;
+			}
+			exit;
+		}
+		
 		if ($this->connectionType == 'Origin') {
 			echo '<div class="cst-progress">Sync not required on origin pull CDNs.';
 		} else {
@@ -328,6 +399,13 @@ class Cst {
 		$files = self::getDirectoryFiles($dirs);
 		self::_addFilesToDb($files);
 		self::syncFiles();
+	}
+
+	/**
+	 * Tests the CDN connection
+	 */
+	public function testConnection() {
+		self::createConnection();
 	}
 
 	/**
@@ -379,6 +457,20 @@ class Cst {
 
 		}
 		return $files;
+	}
+
+	public function uploadMedia($meta) {
+		self::createConnection();
+		$uploaddir = wp_upload_dir(); 
+		$uploaddir = $uploaddir['basedir'].'/';
+		self::pushFile($uploaddir.$meta['file'], str_replace(ABSPATH, '', $uploaddir).$meta['file']);
+		if (isset($meta['sizes']) && is_array($meta['sizes']) && !empty($meta['sizes'])) {
+			foreach($meta['sizes'] as $size) {
+				$dirname = dirname($meta['file']).'/';
+				self::pushFile($uploaddir.$dirname.$size['file'], str_replace(ABSPATH, '', $uploaddir).$dirname.$size['file']);
+			}
+		}
+		return $meta;
 	}
 
 	public function createNonce() {

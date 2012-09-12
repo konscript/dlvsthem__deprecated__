@@ -66,6 +66,10 @@ class CST_Page_Options extends CST_Page {
 		parent::$options['cst-cf-username'] = get_option('cst-cf-username');
 		parent::$options['cst-cf-api'] = get_option('cst-cf-api');
 		parent::$options['cst-cf-container'] = get_option('cst-cf-container');
+		parent::$options['cst-webdav-username'] = get_option('cst-webdav-username');
+		parent::$options['cst-webdav-password'] = get_option('cst-webdav-password');
+		parent::$options['cst-webdav-host'] = get_option('cst-webdav-host');
+		parent::$options['cst-webdav-basedir'] = get_option('cst-webdav-basedir');
 	}
 
 	/**
@@ -79,6 +83,9 @@ class CST_Page_Options extends CST_Page {
 				foreach($_POST['options'] as $key => $value) {
 					update_option($key, $value);
 				}
+				require_once CST_DIR.'lib/Cst.php';
+				$obj = new Cst();
+				$obj->testConnection();
 			} else if ($form == 'js') {
 				foreach($_POST['options'] as $key => $value) {
 					if ($key == 'cst-js-exclude' && !empty($value)) {

@@ -8,4 +8,13 @@ jQuery(document).ready(function() {
 		}
 		jQuery("." + this.value).show().siblings().hide();
 	});
+	jQuery("#cst-js-minify-yes").click(function() {
+		jQuery(".js-opt-level").show();
+	});
+	jQuery("#cst-js-minify-no").click(function() {
+		jQuery(".js-opt-level").hide();
+	});
+	if (jQuery('#cst-js-minify-yes').attr('checked') == 'checked') {
+		jQuery(".js-opt-level").show();
+	}
 });

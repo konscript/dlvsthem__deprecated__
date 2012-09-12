@@ -5,13 +5,13 @@ Plugin URI: http://www.olliearmstrong.co.uk
 Description: Allows wordpress owners to sync their static files to CDN
 Author: Fubra Limited
 Author URI: http://www.catn.com
-Version: 2.1
+Version: 2.2.1
 */
 
 global $wpdb;
 
 define('CST_DIR', dirname(__FILE__).'/');
-define('CST_VERSION', '2.1');
+define('CST_VERSION', '2.2.1');
 define('CST_URL', admin_url('options-general.php'));
 define('CST_FILE', __FILE__);
 define('CST_TABLE_FILES', $wpdb->get_blog_prefix().'cst_new_files');
@@ -21,6 +21,9 @@ define('CST_CONTACT_EMAIL', 'support@catn.com');
 if (is_admin()) {
 	require_once CST_DIR.'lib/Cst.php';
 	$core = new Cst();
+} else {
+	require_once CST_DIR.'lib/Site.php';
+	new Cst_Site;
 }
 
 function cst_install() {

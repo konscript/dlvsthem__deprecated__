@@ -1554,7 +1554,8 @@ class S3
 		$type = false;
 		// Fileinfo documentation says fileinfo_open() will use the
 		// MAGIC env var for the magic file
-		if (extension_loaded('fileinfo') && isset($_ENV['MAGIC']) &&
+		$magic_works = !preg_match('/\.(css|js)$/i', $file);
+		if ($magic_works && extension_loaded('fileinfo') && isset($_ENV['MAGIC']) &&
 		($finfo = finfo_open(FILEINFO_MIME, $_ENV['MAGIC'])) !== false)
 		{
 			if (($type = finfo_file($finfo, $file)) !== false)
@@ -1568,7 +1569,7 @@ class S3
 			finfo_close($finfo);
 
 		// If anyone is still using mime_content_type()
-		} elseif (function_exists('mime_content_type'))
+		} elseif ($magic_works && function_exists('mime_content_type'))
 			$type = trim(mime_content_type($file));
 
 		if ($type !== false && strlen($type) > 0) return $type;
@@ -1791,7 +1792,7 @@ final class S3Request
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, false);
 		curl_setopt($curl, CURLOPT_WRITEFUNCTION, array(&$this, '__responseWriteCallback'));
 		curl_setopt($curl, CURLOPT_HEADERFUNCTION, array(&$this, '__responseHeaderCallback'));
-		curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+		//curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
 
 		// Request types
 		switch ($this->verb)
