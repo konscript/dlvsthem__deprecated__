@@ -29,4 +29,12 @@ function dlvssite() {
 
 	return $site;
 }
+
+function current_language() {
+	if(dlvssite() == "flufighters" || dlvssite() == "travelvaccination" || dlvssite() == "dlvsuk"){
+		return "en";
+	}else{
+		return "da";
+	}
+}
 ?>

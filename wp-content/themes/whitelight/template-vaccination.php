@@ -18,7 +18,7 @@
 		
 			<?php $vaccinations = get_posts( $args ); ?> 
 			<table class="zebra">
-				<thead><tr><td>Vaccination</td><td>Pris</td><td>Antal</td><td>Beskyttelse</td></tr></thead>
+				<thead><tr><td><?php echo dlvs_translate('Vaccination'); ?></td><td><?php echo dlvs_translate('Price'); ?></td><td><?php echo dlvs_translate('Quantity'); ?></td><td><?php echo dlvs_translate('Protection'); ?></td></tr></thead>
 				<tbody>
 				<?php foreach($vaccinations as $vaccination){ ?>
 					<tr>

@@ -14,7 +14,7 @@
 
 $sidebar_back = '<a href="'. get_bloginfo("wpurl") . '/vaccinationsanbefaling/" style="margin-bottom:10px;float:left">Tilbage til landeoversigten</a><br />';
 $destination = urlencode(the_title('', '', false));
-$sidebar_button = '<a class="button-book" href="'.get_bloginfo("wpurl").'/booking/destination/' . $destination . '"><div class="button-book-title">Bestil vaccination</div></a>';
+$sidebar_button = '<a class="button-book" href="'.get_bloginfo("wpurl").'/booking/destination/' . $destination . '"><div class="button-book-title">' . dlvs_translate("Bestil vaccination") . '</div></a>';
 
 //$sidebar_country_meta = '<h3>Lande fakta</h3>';
 if(get_field('flag')) {
@@ -60,7 +60,7 @@ $sidebar_country_meta .=
 
 					<?php 
 						$destination = urlencode(the_title('', '', false));
-						$book_button = '<a class="button-book" href="' . get_bloginfo('wpurl') . '/booking/destination/' . $destination . '"><div class="button-book-title">Bestil vaccination</div></a>';
+						$book_button = '<a class="button-book" href="' . get_bloginfo('wpurl') . '/booking/destination/' . $destination . '"><div class="button-book-title">' . dlvs_translate("Bestil vaccination") . '</div></a>';
 						//echo $book_button;
 					?>
 	

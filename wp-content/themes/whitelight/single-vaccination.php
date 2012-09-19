@@ -8,7 +8,7 @@
 	);
 	$sidebar_menu = wp_list_pages( $args );
 
-	$sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="'.get_bloginfo("wpurl").'/booking/"><div class="button-book-title">Bestil vaccination</div></a>';	
+	$sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="'.get_bloginfo("wpurl").'/booking/"><div class="button-book-title">' . dlvs_translate("Bestil vaccination") . '</div></a>';	
 } ?>
 
 <div id="content">
@@ -28,14 +28,14 @@
 	            	</div>
 	            	<br />
 					<div class="accordion">						 							
-						<?php echo slidedown("Vaccine indhold", get_field("vaccine_contents")); ?>							
-						<?php echo slidedown("Hvem bør vaccineres?", get_field("who_should_be_vaccinated")); ?>
-						<?php echo slidedown("Vaccine dosis", get_field("vaccination_dosis")); ?>
-						<?php echo slidedown("Hvem bør ikke vaccineres?", get_field("who_should_not_be_vaccinated")); ?>
-						<?php echo slidedown("Graviditet og amning", get_field("pregnancy_and_lactation")); ?>
-						<?php echo slidedown("Beskyttelsestid", get_field("duration_of_immunity")); ?>
-						<?php echo slidedown("Bivirkninger", get_field("side_effects")); ?>
-						<?php echo slidedown("Pris", get_field("price")); ?>						                 
+						<?php echo slidedown(dlvs_translate('Vaccination content'), get_field("vaccine_contents")); ?>							
+						<?php echo slidedown(dlvs_translate("Who should be vaccinated?"), get_field("who_should_be_vaccinated")); ?>
+						<?php echo slidedown(dlvs_translate("Vaccine dose"), get_field("vaccination_dosis")); ?>
+						<?php echo slidedown(dlvs_translate("Who should not be vaccinated?"), get_field("who_should_not_be_vaccinated")); ?>
+						<?php echo slidedown(dlvs_translate("Pregnancy and breastfeeding"), get_field("pregnancy_and_lactation")); ?>
+						<?php echo slidedown(dlvs_translate("Duration of immunity"), get_field("duration_of_immunity")); ?>
+						<?php echo slidedown(dlvs_translate("Side effects"), get_field("side_effects")); ?>
+						<?php echo slidedown(dlvs_translate("Price"), get_field("price")); ?>						                 
 					</div>														
 			    </div><!--#end post-->
 	        <?php endwhile; endif; ?>
