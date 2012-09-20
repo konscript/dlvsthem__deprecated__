@@ -6,7 +6,7 @@ $args = array(
 	'title_li'	=> '&nbsp;',
 	'echo'		=> false,
 );
-//$sidebar_button = '<a class="button-book" href="'.get_bloginfo("wpurl").'/booking/"><div class="button-book-title">' . dlvs_translate("Bestil vaccination") . '</div></a>';
+//$sidebar_button = '<a class="button-book" href="'.get_bloginfo("wpurl").'/booking/"><div class="button-book-title">' . dlvs_translate("Book vaccination") . '</div></a>';
 $sidebar_menu = wp_list_pages( $args ); ?>
 
 <div id="content">

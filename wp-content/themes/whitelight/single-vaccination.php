@@ -8,7 +8,7 @@
 	);
 	$sidebar_menu = wp_list_pages( $args );
 
-	$sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="'.get_bloginfo("wpurl").'/booking/"><div class="button-book-title">' . dlvs_translate("Bestil vaccination") . '</div></a>';	
+	$sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="'.get_bloginfo("wpurl").'/booking/"><div class="button-book-title">' . dlvs_translate("Book vaccination") . '</div></a>';	
 } ?>
 
 <div id="content">
