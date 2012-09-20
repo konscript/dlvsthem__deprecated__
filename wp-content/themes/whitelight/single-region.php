@@ -33,7 +33,7 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 
 						<form method="GET" class="map-form" action="<?php bloginfo('wpurl'); ?>">
 						  <select name="Country" id="country-selector">
-					    <option value="" selected="selected">Vælg land</option>
+					    <option value="" selected="selected"><?php echo dlvs_translate("Choose country"); ?></option>
 							<?php foreach($countries as $country): ?>
 								<?php 
 									$country_name = $country->post_title;
@@ -46,7 +46,7 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 						  <input type="Submit" value="Find">
 						</form>	
 
-						<span> for at lære mere om landet og anbefalede vaccinationer.</span>
+						<span> <?php echo dlvs_translate("to learn more about the recommended vaccinations."); ?></span>
 
 						<!-- <img class="region-map" src="<?php bloginfo('template_directory'); ?>/img/continents-<?php echo basename(get_permalink()); ?>.png" alt="<?php echo basename(get_permalink()); ?>" /> -->
 		      			<br /><br />

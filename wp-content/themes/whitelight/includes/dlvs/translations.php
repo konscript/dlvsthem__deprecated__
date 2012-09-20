@@ -3,8 +3,7 @@
 function dlvs_translate($key) {
 
 	// English 
-	$english_list = array(
-	);
+	$english_list = array();
 
 	// Danish translations
 	$danish_list = array(
@@ -22,7 +21,16 @@ function dlvs_translate($key) {
 		"New mobile app" => "Ny mobil app", 						// frontpage streamer
 		"free of charge" => "helt gratis",							// frontpage streamer
 		"bring your doctor with you." => "tag lægen med på rejsen.", // frontpage streamer
-		"Get it in" => "Hent den i"									// frontpage streamer
+		"Get it in" => "Hent den i",								// frontpage streamer
+		"Capital" => "Hovedstad",									// country
+		"Population" => "Indbyggere",								// country
+		"to learn more about the recommended vaccinations." => "for at lære mere om landet og anbefalede vaccinationer.", // region
+		"Choose country" => "Vælg land",							// country selector dropdown
+		"or click on the map" => "eller klik på kortet",			// recommendation map
+		"Opening hours" => "Åbningstider",							// clinic
+		"Clinics location" => "Se klinikken på kort",				// clinic
+		"Phone" => "Telefon",										// clinic
+		"Show full-screen map" => "Vis stort kort"					// clinic
 	);
 
 	if(current_language() == "en"){
