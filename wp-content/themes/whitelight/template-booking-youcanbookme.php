@@ -6,7 +6,6 @@
 			<header><h1><?php the_title(); ?></h1></header>
 			
 			<?php
-									
 			// destination
 			$clinic_param = urldecode($wp_query->query_vars['clinic_param']);		
 			$destination_param = urldecode($wp_query->query_vars['destination_param']);
@@ -80,21 +79,21 @@
 			<table class="zebra">
 				<thead>
 					<td>Clinic</td>
-					<?php	foreach($weekdays as $weekday): ?>
+					<?php foreach($weekdays as $weekday): ?>
 						<td><?php echo ucfirst($weekday); ?></td>
-					<?php	endforeach; ?>
+					<?php endforeach; ?>
 					<td>&nbsp;</td>							
 				</thead>						
-				<?php	$clinics = getClinics(); ?>
+				<?php $clinics = getClinics(); ?>
 				<?php foreach($clinics as $clinic): ?>	
 					<tr>
-						<td><?php	the_field("address", $clinic->ID); ?></td>
-						<?php	foreach($weekdays as $weekday): ?>
-							<td><?php	the_field($weekday, $clinic->ID); ?></td>
-						<?php	endforeach; ?>	
-						<td><a class="button-book	button-book-table" href="<?php the_field("booking_url", $clinic->ID); ?>"><div class="button-book-title">Bestil tid</div></a></td>
+						<td><?php the_field("address", $clinic->ID); ?></td>
+						<?php foreach($weekdays as $weekday): ?>
+							<td><?php the_field($weekday, $clinic->ID); ?></td>
+						<?php endforeach; ?>	
+						<td><a class="button-book	button-book-table" href="<?php the_field("booking_url", $clinic->ID); ?>"><div class="button-book-title">Book</div></a></td>
 					</tr>
-				<?php	endforeach; ?>
+				<?php endforeach; ?>
 			</table>
 		</div>
 	</div>

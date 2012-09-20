@@ -30,7 +30,8 @@ function dlvs_translate($key) {
 		"Opening hours" => "Åbningstider",							// clinic
 		"Clinics location" => "Se klinikken på kort",				// clinic
 		"Phone" => "Telefon",										// clinic
-		"Show full-screen map" => "Vis stort kort"					// clinic
+		"Show full-screen map" => "Vis stort kort",					// clinic
+		"Type to search" => "Skriv for at søge"						// faq
 	);
 
 	if(current_language() == "en"){
