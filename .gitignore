@@ -1,1 +1,8 @@
+# osx temp
 .DS_Store
+
+# drafts made by stupid programs
+*.*~
+
+# sass cache
+.sass-cache/
