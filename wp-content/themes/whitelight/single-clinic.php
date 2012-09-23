@@ -9,7 +9,7 @@ $args = array(
 $sidebar_menu = wp_list_pages( $args ); 
 
 $clinic = basename(get_permalink());
-$sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="' . get_bloginfo('wpurl') . '/booking/clinic/' . get_field('xmedicus_id') . '"><div class="button-book-title"> ' . dlvs_translate("Bestil vaccination") . '</div></a>';
+$sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="' . get_bloginfo('wpurl') . '/booking/clinic/' . get_field('xmedicus_id') . '"><div class="button-book-title"> ' . dlvs_translate("Book vaccination") . '</div></a>';
 ?>
 
 <div id="content">
@@ -35,12 +35,12 @@ $sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="' . ge
 						<div class="contact">	
 							<p class="header"></p>
 							<p class="address"><?php the_field('address'); ?><br /><?php the_field('city'); ?></p>					
-							<p class="telephone">Telefon: <?php the_field('phone_number'); ?></p>
+							<p class="telephone"><?php echo dlvs_translate("Phone"); ?>: <?php the_field('phone_number'); ?></p>
 						</div>
 
 						<?php $weekdays = array("monday", "tuesday", "wednesday", "thursday", "friday", "saturday"); ?>						
 						<div class="opening_hours">	
-							<strong>Åbningstiderne for klinikken tilpasses efter behov:</strong>
+							<strong><?php echo dlvs_translate("Opening hours"); ?>:</strong>
 							<br /><br />
 							<table class="zebra">
 								<?php	foreach($weekdays as $weekday): ?>
@@ -56,7 +56,7 @@ $sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="' . ge
 						
 						<!--- <div class="gmap"><?php the_field('map'); ?></div> -->
 						<br />
-						<strong>Se klinikken på kort:</strong>
+						<strong><?php echo dlvs_translate("Clinics location"); ?>:</strong>
 						<br /><br />
 						
 						<?php 
@@ -66,9 +66,11 @@ $sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="' . ge
 
 						<iframe width="709" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?q=<?php echo $link_address.$link_city; ?>&amp;ie=UTF8&amp;output=embed"></iframe>
 						<br />
-						<a href="https://maps.google.com/?q=<?php echo $link_address.$link_city; ?>" target="_blank">Vis stort kort</a>
+						<a href="https://maps.google.com/?q=<?php echo $link_address.$link_city; ?>" target="_blank"><?php echo dlvs_translate("Show full-screen map"); ?></a>
 						<br />
-						<a href="http://www.rejseplanen.dk/bin/query.exe/mn?ZADR=1&Z=<?php echo $link_address.$link_city; ?>" target="_blank">Tilgang med offentlig transport</a>
+						<?php if(dlvssite() == "sikkerrejse") { ?>
+							<a href="http://www.rejseplanen.dk/bin/query.exe/mn?ZADR=1&Z=<?php echo $link_address.$link_city; ?>" target="_blank">Tilgang med offentlig transport</a>
+						<?php } ?>
 					</div>
 				</div><!--#end post-->
 			<?php endwhile; endif; ?>

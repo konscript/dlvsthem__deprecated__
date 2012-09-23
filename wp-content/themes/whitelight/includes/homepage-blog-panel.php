@@ -33,7 +33,7 @@
 					<div class="map-form-container">
 						<form method="GET" class="map-form" action="<?php bloginfo('wpurl'); ?>">
 						  <select name="Country" id="country-selector">
-							<option value="" selected="selected">Vælg land</option>
+							<option value="" selected="selected"><?php echo dlvs_translate("Choose country"); ?></option>
 							<?php $countries = getCountries(); ?>	
 							<?php foreach($countries as $country): ?>
 								<?php 
@@ -46,7 +46,7 @@
 							</select>
 						  <input type="Submit" value="Find">
 						</form>
-						<span class="map-text">eller klik på kortet:</span>
+						<span class="map-text"><?php echo dlvs_translate("or click on the map"); ?>:</span>
 					</div>
 
 					 <div id="map-continents">
@@ -88,18 +88,33 @@
 				</li> -->
 				<li>
 					<img src="<?php bloginfo('wpurl'); ?>/wp-content/themes/whitelight/styles/red/ico-more.png" />
-					<h3><a target="_blank" href="http://www.hpvvaccination.dk">HPV Vaccination</a></h3>
-					<p>Hvert år er der omkring 100 danskere som smittes med malaria på rejser. Lær hvordan du undgår at blive smittet.</p>
+					<?php if (dlvssite() == "sikkerrejse") { ?>
+						<h3><a target="_blank" href="http://www.hpvvaccination.dk">HPV Vaccination</a></h3>
+						<p>Hvert år er der omkring 100 danskere som smittes med malaria på rejser. Lær hvordan du undgår at blive smittet.</p>
+					<?php } else { ?>
+						<h3><a href="faq/">Frequently Asked Questions</a></h3>
+						<p>Why are childhood vaccination so important? What are the most common side-effects? Get the answers.</p>					
+					<?php } ?>
 				</li>
 				<li>
 					<img src="<?php bloginfo('wpurl'); ?>/wp-content/themes/whitelight/styles/red/ico-more.png" />
-					<h3><a href="<?php bloginfo('wpurl'); ?>/rejseraad/malaria">Malaria</a></h3>
-					<p>Hvert år er der omkring 100 danskere som smittes med malaria på rejser. Lær hvordan du undgår at blive smittet.</p>
+					<?php if (dlvssite() == "sikkerrejse") { ?>
+						<h3><a href="<?php bloginfo('wpurl'); ?>/rejseraad/malaria">Malaria</a></h3>
+						<p>Hvert år er der omkring 100 danskere som smittes med malaria på rejser. Lær hvordan du undgår at blive smittet.</p>
+					<?php } else { ?>
+						<h3><a href="<?php bloginfo('wpurl'); ?>/traveladvice/malaria/">Malaria prevention</a></h3>
+						<p>Malaria is one of the major causes of morbidity and mortality worldwide. Learn how to avoid getting infected.</p>
+					<?php } ?>				
 				</li>
 				<li>
 					<img src="<?php bloginfo('wpurl'); ?>/wp-content/themes/whitelight/styles/red/ico-more.png" />
-					<h3><a href="<?php bloginfo('wpurl'); ?>/booking">Bestil tid</a></h3>
-					<p>Du kan bestille tid online til vaccination i en vores klinikker. Vælg selv tid og sted - nemmere bliver det ikke</p>
+					<?php if (dlvssite() == "sikkerrejse") { ?>
+						<h3><a href="<?php bloginfo('wpurl'); ?>/booking">Bestil tid</a></h3>
+						<p>Du kan bestille tid online til vaccination i en vores klinikker. Vælg selv tid og sted - nemmere bliver det ikke</p>
+					<?php } else { ?>
+						<h3><a href="<?php bloginfo('wpurl'); ?>/booking">Book your time</a></h3>
+						<p>You can book a time slot online in one of our clinics. Choose time and place - it doesn't get easier.</p>					
+					<?php } ?>
 				</li>
 			</ul>
 		        	        

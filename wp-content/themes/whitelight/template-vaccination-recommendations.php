@@ -6,7 +6,7 @@ $args = array(
 	'title_li'	=> '&nbsp;',
 	'echo'		=> false,
 );
-//$sidebar_button = '<a class="button-book" href="'.get_bloginfo("wpurl").'/booking/"><div class="button-book-title">' . dlvs_translate("Bestil vaccination") . '</div></a>';
+//$sidebar_button = '<a class="button-book" href="'.get_bloginfo("wpurl").'/booking/"><div class="button-book-title">' . dlvs_translate("Book vaccination") . '</div></a>';
 $sidebar_menu = wp_list_pages( $args ); ?>
 
 <div id="content">
@@ -24,7 +24,7 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 				<div class="map-form-container">
 					<form method="GET" class="map-form" action="<?php bloginfo('wpurl'); ?>">
 					  <select name="Country" id="country-selector">
-						<option value="" selected="selected">Vælg land</option>
+						<option value="" selected="selected"><?php echo dlvs_translate("Choose country"); ?></option>
 						<?php $countries = getCountries(); ?>	
 						<?php foreach($countries as $country): ?>
 							<?php 
@@ -37,7 +37,7 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 						</select>
 					  <input type="Submit" value="Find">
 					</form>
-					<span class="map-text">eller klik på kortet:</span>
+					<span class="map-text"><?php echo dlvs_translate("or click on the map"); ?>:</span>
 				</div>
 
 				 <div id="map-continents">

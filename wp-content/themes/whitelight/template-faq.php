@@ -12,7 +12,7 @@
 				the_content(); 
 			}?>
 			
-			<input type="text" id="searchFaq" placeholder="Skriv for at søge" />
+			<input type="text" id="searchFaq" placeholder="<?php echo dlvs_translate("Type to search"); ?>" />
 			<a href="#" id="clearSearch">x</a>
 
 			<?php 		

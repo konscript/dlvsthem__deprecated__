@@ -11,10 +11,13 @@
 // if (get_field('updated_malaria_map')) {
 // 	$sidebar_country_meta_links .= '<br /><a href="'.get_field('updated_malaria_map').'" target="_blank">Opdateret Malaria kort</a>';
 // }
-
-$sidebar_back = '<a href="'. get_bloginfo("wpurl") . '/vaccinationsanbefaling/" style="margin-bottom:10px;float:left">Tilbage til landeoversigten</a><br />';
+if (dlvssite() == "sikkerrejse") {
+	$sidebar_back = '<a href="'. get_bloginfo("wpurl") . '/vaccinationsanbefaling/" style="margin-bottom:10px;float:left">Tilbage til landeoversigten</a><br />';
+} else {
+	$sidebar_back = '<a href="'. get_bloginfo("wpurl") . '/recommendation/" style="margin-bottom:10px;float:left">Go back to the map</a><br />';
+}
 $destination = urlencode(the_title('', '', false));
-$sidebar_button = '<a class="button-book" href="'.get_bloginfo("wpurl").'/booking/destination/' . $destination . '"><div class="button-book-title">' . dlvs_translate("Bestil vaccination") . '</div></a>';
+$sidebar_button = '<a class="button-book" href="'.get_bloginfo("wpurl").'/booking/destination/' . $destination . '"><div class="button-book-title">' . dlvs_translate("Book vaccination") . '</div></a>';
 
 //$sidebar_country_meta = '<h3>Lande fakta</h3>';
 if(get_field('flag')) {
@@ -27,11 +30,11 @@ $sidebar_country_meta .=
 	'<table class="country-meta">
 		<tbody>
 		<tr>
-			<td><strong>Hovedstad:</strong></td>
+			<td><strong>'.dlvs_translate('Capital').':</strong></td>
 			<td>'.get_field('capital').'</td>
 		</tr>
 		<tr>
-			<td><strong>Indbyggere:</strong></td>
+			<td><strong>'.dlvs_translate('Population').':</strong></td>
 			<td>'.get_field('population').'</td>
 		</tr>
 		<tr>
@@ -60,7 +63,7 @@ $sidebar_country_meta .=
 
 					<?php 
 						$destination = urlencode(the_title('', '', false));
-						$book_button = '<a class="button-book" href="' . get_bloginfo('wpurl') . '/booking/destination/' . $destination . '"><div class="button-book-title">' . dlvs_translate("Bestil vaccination") . '</div></a>';
+						$book_button = '<a class="button-book" href="' . get_bloginfo('wpurl') . '/booking/destination/' . $destination . '"><div class="button-book-title">' . dlvs_translate("Book vaccination") . '</div></a>';
 						//echo $book_button;
 					?>
 	
@@ -68,11 +71,18 @@ $sidebar_country_meta .=
 
 					<?php							
 						$already_outputted = array();
-											
+						
+						if (dlvssite() === "sikkerrejse") {
+							// labels for groups
+							$vaccinations_groups_labels = array(
+								"Alle rejsende", "+2 uger", "+3 måneder", "+6 måneder"
+							);
+						} else {
 						// labels for groups
-						$vaccinations_groups_labels = array(
-							"Alle rejsende", "+2 uger", "+3 måneder", "+6 måneder"
-						);
+							$vaccinations_groups_labels = array(
+								"All travelers", "+2 weeks", "+3 months", "+6 months"
+							);
+						}
 						
 						// vaccinations for groups
 						$vaccinations_groups = array();
