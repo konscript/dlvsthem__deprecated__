@@ -23,6 +23,9 @@
 			<?php if (have_posts()): while (have_posts()): the_post(); ?>
 			    <div class="post">
 			        <header><h1><?php the_title(); ?></h1></header>
+	            	<?php echo dlvs_translate('Price'); ?>: <?php the_field("price"); ?>
+	            	<br/></br/>
+
 			        <div class="post-content">
 						<?php	the_content();	 ?>  
 	            	</div>
