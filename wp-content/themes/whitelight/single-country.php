@@ -1,16 +1,6 @@
 <?php get_header(); ?>
 <?php 
-// Sidebar menu
-// $args = array(
-//   'post_type'=>'region',
-//   'title_li'=> '&nbsp;',
-//   'echo'         => false,  
-// );
-// $sidebar_menu = wp_list_pages( $args );
-// $sidebar_country_meta_links = '<a href="'.get_field('latest_disease_surveillance').'" target="_blank">Sidste sygdomsovervågning</a>';
-// if (get_field('updated_malaria_map')) {
-// 	$sidebar_country_meta_links .= '<br /><a href="'.get_field('updated_malaria_map').'" target="_blank">Opdateret Malaria kort</a>';
-// }
+
 if (dlvssite() == "sikkerrejse") {
 	$sidebar_back = '<a href="'. get_bloginfo("wpurl") . '/vaccinationsanbefaling/" style="margin-bottom:10px;float:left">Tilbage til landeoversigten</a><br />';
 } else {
@@ -46,9 +36,20 @@ $sidebar_country_meta .=
 			<td colspan="2">
 				'.$sidebar_country_meta_links.'		
 			</td>
-		</tr>				
+		</tr>';
+
+	if (get_field('latest_disease_surveillance')) {
+		$sidebar_country_meta .= '<tr><td colspan="2"><a href="'.get_field('latest_disease_surveillance').'" target="_blank">'.dlvs_translate('Latest Disease Surveillance').'</a></td></tr>';
+	}
+
+	if (get_field('updated_malaria_map')) {
+		$sidebar_country_meta .= '<tr><td colspan="2"><a href="'.get_field('updated_malaria_map').'" target="_blank">'.dlvs_translate('Updated Malaria Map').'</a></td></tr>';
+	}
+
+$sidebar_country_meta .= '
 		</tbody>
 	</table>';
+
 ?>
 
 <div id="content">

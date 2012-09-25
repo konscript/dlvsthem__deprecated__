@@ -31,11 +31,16 @@ function dlvs_translate($key) {
 		"Clinics location" => "Se klinikken på kort",				// clinic
 		"Phone" => "Telefon",										// clinic
 		"Show full-screen map" => "Vis stort kort",					// clinic
-		"Type to search" => "Skriv for at søge"						// faq
+		"Type to search" => "Skriv for at søge",					// faq
+		"Updated Malaria Map" => "Opdateret Malaria kort",			// Country
+		"Latest Disease Surveillance" => "Sidste sygdomsovervågning"
 	);
 
+	// get english translation
 	if(current_language() == "en"){
 		$translated = $english_list[$key];
+
+	// get Danish translation
 	}else{
 		$translated = $danish_list[$key];
 	}
