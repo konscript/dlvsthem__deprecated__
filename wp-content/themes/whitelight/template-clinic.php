@@ -15,8 +15,7 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 		<section id="main" class="col-left">
 	
 			<?php 
-			$clinic = basename(get_permalink());
-			//echo '<a class="button-book" href="' . get_bloginfo('wpurl') . '/booking/clinic/' . $clinic . '"><div class="button-book-title">' . dlvs_translate("Book vaccination") . '</div></a>';
+				$clinic = basename(get_permalink());
 			?>
 			<header><h1><?php the_title(); ?></h1></header>
 			<?php while ( have_posts() ) { the_post(); $count++;

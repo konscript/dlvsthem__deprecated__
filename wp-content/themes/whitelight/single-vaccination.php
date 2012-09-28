@@ -8,7 +8,13 @@
 	);
 	$sidebar_menu = wp_list_pages( $args );
 
-	$sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="'.get_bloginfo("wpurl").'/booking/"><div class="button-book-title">' . dlvs_translate("Book vaccination") . '</div></a>';	
+	// If the site uses xmedicus, book button should link directly to
+	if(get_field('xmedicus_id')){
+		$sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="' . get_bloginfo('wpurl') . '/booking/clinic/' . get_field('xmedicus_id') . '"><div class="button-book-title"> ' . dlvs_translate("Book vaccination") . '</div></a>';
+	}else{
+		$sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="' . get_bloginfo('wpurl') . '/booking/"><div class="button-book-title"> ' . dlvs_translate("Book vaccination") . '</div></a>';
+	}
+
 } ?>
 
 <div id="content">
