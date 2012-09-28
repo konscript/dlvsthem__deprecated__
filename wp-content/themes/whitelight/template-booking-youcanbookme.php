@@ -82,7 +82,7 @@
 					<?php foreach($weekdays as $weekday): ?>
 						<td><?php echo ucfirst($weekday); ?></td>
 					<?php endforeach; ?>
-					<td>&nbsp;</td>							
+					<td width="100">&nbsp;</td>							
 				</thead>						
 				<?php $clinics = getClinics(); ?>
 				<?php foreach($clinics as $clinic): ?>	
@@ -90,8 +90,15 @@
 						<td><?php the_field("address", $clinic->ID); ?></td>
 						<?php foreach($weekdays as $weekday): ?>
 							<td><?php the_field($weekday, $clinic->ID); ?></td>
-						<?php endforeach; ?>	
-						<td><a class="button-book	button-book-table" href="<?php the_field("booking_url", $clinic->ID); ?>"><div class="button-book-title">Book</div></a></td>
+						<?php endforeach; ?>
+						<?php
+							if (get_field("booking_url", $clinic->ID)){
+								$button = '<a class="button-book iframe button-book-table" href="' . get_field('booking_url', $clinic->ID) . '"><div class="button-book-title">Book</div></a>';
+							}else{
+								$button = '<a class="button-book button-book-table" href="' . get_permalink($clinic->ID) . '"><div class="button-book-title">Call us</div></a>';
+							}
+						?>
+						<td><?php echo $button ?></td>
 					</tr>
 				<?php endforeach; ?>
 			</table>
