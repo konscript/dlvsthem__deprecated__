@@ -213,20 +213,47 @@ WOO CUSTOM STYLESHEET (for DLVS)
 // Slider content bar (only apply to small size devices)
 @media only screen and (max-width: 768px) {
 	#featured article {
-		background: #B72020;
+		background: #fff;
 	}
 	#featured article header {
 		text-shadow: none;
 		height: auto;
+		background-color: transparent;
+		color: black;
+		text-shadow: none;
+		background: #fff;
 	}
 	#featured article header h1 {
 		font-family: Georgia, serif;
 		font-size: 2.5em;
+		color: black;
 	}
 	#featured article header .entry {
 		font-family: 'Helvetica Neue', Helvetica, sans-serif;
 		font-size: 1em;
 		line-height: 1.5em;
+		color: black;
+	}
+	#featured article header .calltoaction {
+		position: absolute;
+		bottom: 60px;
+		width: 240px;
+		display: block;
+		text-align: center;
+	}
+	#featured article header .calltoaction a {
+		display: block;
+		font-size: 1.1em;
+		background-color: #B72020;
+		border-radius: 3px;
+		padding: 10px 20px;
+		width: auto;
+
+		&:hover {
+			background-color: lighten(#B72020, 10%);
+			text-decoration: none;
+			.transition(all, 0.2s);
+		}
 	}
 	.controls-container .flex-control-nav {
 		display: none;
@@ -257,15 +284,15 @@ WOO CUSTOM STYLESHEET (for DLVS)
 	font-weight: normal;
 	//font-style: italic;
 	font-family: @typography-family-secondary;
-	font-size: 1.1em;
+	font-size: 1.05em;
 }
 
 .home-section#features li p {
-	width: 80%;
+	width: 90%;
 }
 
 .home-section#features li p img {
-	margin-right: 15px;
+	margin-right: 10px;
 	margin-bottom: 40px
 }
 
