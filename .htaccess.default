@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.php [L]
+</IfModule>
+
+# BEGIN WordPress
+
+# END WordPress
+
+SetEnv MYSQL_DB_NAME dlvsflufighters
+SetEnv MYSQL_USERNAME user
+SetEnv MYSQL_PASSWORD pass
+SetEnv MYSQL_DB_HOST localhost

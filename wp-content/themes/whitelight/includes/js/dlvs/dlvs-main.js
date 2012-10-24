@@ -38,7 +38,7 @@ jQuery.noConflict();
 
 	// load iframe
 	function bookingIframe(){		
-		$('.template.booking a.button-book').click(function(){
+		$('.template.booking a.button-book.iframe').click(function(){
 			var booking_url = $(this).attr('href');
 			
 			$('.zebra').fadeOut('fast', function() {

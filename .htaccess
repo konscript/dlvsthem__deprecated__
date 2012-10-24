@@ -9,3 +9,8 @@
 # BEGIN WordPress
 
 # END WordPress
+
+SetEnv MYSQL_DB_NAME dlvsflufighters
+SetEnv MYSQL_USERNAME root
+SetEnv MYSQL_PASSWORD root
+SetEnv MYSQL_DB_HOST localhost

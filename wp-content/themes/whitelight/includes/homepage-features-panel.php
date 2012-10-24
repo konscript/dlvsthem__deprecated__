@@ -9,8 +9,10 @@
  	* Setup default variables, overriding them if the "Theme Options" have been saved.
  	*/
 	
+
+
 	$settings = array(
-					'features_area_entries' => 3,
+					'features_area_entries' => $settings['features_area_entries'],
 					'features_area_title' => '',
 					'features_area_message' => '',
 					'features_area_link_text' => __( 'View all our features', 'woothemes' ),
@@ -38,7 +40,7 @@
 			
 			/* The Loop. */	
 			if ( have_posts() ) { $count = 0; ?>
-			<section id="features" class="home-section fix">
+			<section id="features" class="home-section fix count<?php echo $settings['features_area_entries']; ?>">
     		
     			<?php if ($settings['features_area_title']): ?>
     			<header class="block">
@@ -52,7 +54,7 @@
 				<?php
 				while ( have_posts() ) { the_post(); $count++;
     				?>
-    				<li class="fix <?php if ( $count % 3 == 0 ) { echo 'last'; } ?>">
+    				<li class="fix <?php if ( $count == $settings['features_area_entries']) { echo 'last'; } ?>">
     					
     					<?php $feature_readmore = get_post_meta( $post->ID, 'feature_readmore', true ); ?>
 	    				<h2><a href="<?php if ( $feature_readmore != '' ) { echo $feature_readmore; } else { the_permalink(); } ?>"><?php the_title(); ?></a></h2>
@@ -67,7 +69,7 @@
 	    					} ?>
 	    				</p>
 	    				</li>
-	    				<?php if ( $count % 3 == 0 ) { echo '<li class="fix clear"></li>'; } ?>
+	    				<?php if ( $count == $settings['features_area_entries']) { echo '<li class="fix clear"></li>'; } ?>
     				<?php
     			} // End While Loop ?>
     			</ul>

@@ -358,12 +358,13 @@ h6 a:hover {
 }
 h1 {
   font-size: 2em;
+  margin-bottom: 1em;
 }
 h2 {
   font-size: 1.8em;
 }
 h3 {
-  font-size: 1.6em;
+  font-size: 1.4em;
 }
 h4 {
   font-size: 1.2em;
@@ -1174,7 +1175,7 @@ article.type-features header {
   margin: 0 0 1em;
 }
 article.type-features header h1 {
-  font-family: "Signika", sans-serif;
+  font-family: Georgia, serif;
 }
 article.type-features header h1 a {
   color: #252525;
@@ -2379,6 +2380,10 @@ article.type-features .post-more a:visited:hover {
 }
 #footer-widgets .widget {
   color: #8b8b8b;
+}
+#footer-widgets .widget a {
+  color: white;
+  text-decoration: underline;
 }
 #footer-widgets .widget h3 {
   color: #fff;

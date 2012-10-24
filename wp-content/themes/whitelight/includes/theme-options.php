@@ -387,6 +387,8 @@ $options[] = array( "name" => "Homepage Options",
 					"type" => "heading",
 					"icon" => "homepage" );
 
+// Intro
+
 $options[] = array( "name" => "Intro Message",
 					"type" => "subheading" );
 
@@ -401,6 +403,8 @@ $options[] = array( "name" => "Homepage Intro Message",
                     "id" => $shortname."_custom_intro_message_text",
                     "std" => 'Whitelight features a full width slider and a widgetized homepage, allowing you full control over how you showcase your business. <a href="http://woothemes.com/2012/02/whitelight/">Read more</a> about all the cool features!',
                     "type" => "textarea" );
+
+// Features
 
 $options[] = array( "name" => "Features Area",
 					"type" => "subheading" );
@@ -418,7 +422,7 @@ $options[] = array( "name" => "Number of Features",
                     "type" => "select",
                     "options" => $other_entries);
 
-$options[] = array(    "name" => __( 'Features Order', 'woothemes' ),
+$options[] = array( "name" => __( 'Features Order', 'woothemes' ),
                     "desc" => __( 'Select which way you wish to order your features.', 'woothemes' ),
                     "id" => $shortname."_features_area_order",
                     "std" => "DESC",
@@ -450,11 +454,13 @@ $options[] = array( "name" => "Features Area Link URL (optional)",
 					"type" => "text" );
 
 $options[] = array( "name" => __( 'Features Items URL Base', 'woothemes' ),
-						"desc" => sprintf( __( 'The base of all feature item URLs (re-save the %s after changing this setting).', 'woothemes' ), '<a href="' . admin_url( 'options-permalink.php' ) . '">' . __( 'Permalinks', 'woothemes' ) . '</a>' ),
-						"id" => $shortname."_features_rewrite",
-						"std" => "features",
-						"type" => "text");
+					"desc" => sprintf( __( 'The base of all feature item URLs (re-save the %s after changing this setting).', 'woothemes' ), '<a href="' . admin_url( 'options-permalink.php' ) . '">' . __( 'Permalinks', 'woothemes' ) . '</a>' ),
+					"id" => $shortname."_features_rewrite",
+					"std" => "features",
+					"type" => "text");
 						
+// Portfolio
+
 $options[] = array( "name" => "Portfolio Area",
 					"type" => "subheading" );
 					
@@ -471,7 +477,7 @@ $options[] = array( "name" => "Number of Portfolio items",
                     "type" => "select",
                     "options" => $other_entries);
                     
-$options[] = array(    "name" => __( 'Portfolio Order', 'woothemes' ),
+$options[] = array( "name" => __( 'Portfolio Order', 'woothemes' ),
                     "desc" => __( 'Select which way you wish to order your porfolio items.', 'woothemes' ),
                     "id" => $shortname."_portfolio_area_order",
                     "std" => "DESC",
@@ -501,7 +507,8 @@ $options[] = array( "name" => "Portfolio Area Link URL (optional)",
 					"id" => $shortname."_portfolio_area_link_URL",
 					"std" => "",
 					"type" => "text" );
-					
+
+// Content
 
 $options[] = array( "name" => "Content Area",
 					"type" => "subheading" );
@@ -512,12 +519,37 @@ $options[] = array( "name" => "Enable Content Area",
                     "std" => "false",
                     "type" => "checkbox");					
 
-$options[] = array( "name" => "Content Area Content",
+$options[] = array( "name" => "Content Area Map Title",
+					"desc" => "Enter the title for the blog area alternate layout to be displayed on your homepage.",
+					"id" => $shortname."_blog_area_title",
+					"std" => "Some of our Blog Posts",
+					"type" => "text" );
+
+// $options[] = array( "name" => "Content Area Message",
+//                     "desc" => "Choose to display either blog posts or a page in the content area.",
+//                     "id" => $shortname."_blog_area_content",
+//                     "std" => "blog",
+// 					"type" => "select2",
+// 					"options" => array( 'blog' => 'Blog Posts', 'page' => 'Page Content' ) );
+
+
+$options[] = array( "name" => "Content Area Message",
                     "desc" => "Choose to display either blog posts or a page in the content area.",
-                    "id" => $shortname."_blog_area_content",
-                    "std" => "blog",
-					"type" => "select2",
-					"options" => array( 'blog' => 'Blog Posts', 'page' => 'Page Content' ) );
+                    "id" => $shortname."_blog_area_message",
+					"std" => 'This is where your latest blog posts will show up. You can change this text in the options.',
+                    "type" => "textarea" );
+
+$options[] = array( "name" => "Content Area Link Text",
+					"desc" => "Enter the text for the link to the blog archive page in the features area to be displayed on your homepage.",
+					"id" => $shortname."_blog_area_link_text",
+					"std" => "View all our blog posts",
+					"type" => "text" );
+
+$options[] = array( "name" => "Content Area Link URL (optional)",
+					"desc" => "Enter an custom URL for the blog archive page link.",
+					"id" => $shortname."_blog_area_link_URL",
+					"std" => "",
+					"type" => "text" );
 					
 $options[] = array( "name" => "Number of Blog posts",
                     "desc" => "Select the number of blog posts that should appear in the blog area on the home page.",
@@ -538,6 +570,8 @@ $options[] = array( "name" => "Page Content",
                     "std" => "",
                     "type" => "select2",
                     "options" => $woo_pages_raw);
+
+// Blog
 
 $options[] = array( "name" => "Blog Area",
 					"type" => "subheading" );
@@ -614,6 +648,8 @@ $options[] = array(    "name" => __( 'Blog Area Order', 'woothemes' ),
 					"type" => "select2",
 					"options" => array("DESC" => __( 'Newest to oldest', 'woothemes' ), "ASC" => "Oldest to newest", "rand" => "Random order") ); 
 					
+// Streamer
+
 $options[] = array( "name" => "Streamer Area",
 					"type" => "subheading" );
 

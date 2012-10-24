@@ -3,12 +3,13 @@
 
 <div id="content">
 	<div class="page col-full">
-		<?php sidebar(true, true, false); ?>
-		<section id="main" class="col-left">
-			<a class="button-book" href="<?php echo get_bloginfo('wpurl'); ?>/booking/"><div class="button-book-title">Bestil vaccination</div></a>
+		<?php //sidebar(true, true, false); ?>
+		<section id="main" class="fullwidth">
 			<header><h1><?php the_title(); ?></h1></header>
-			<?php echo the_content(); ?>
-		
+			<?php while ( have_posts() ) { the_post(); $count++;
+				the_content(); 
+			}?>	
+			<br />		
 			<?php $args = array(
 			'orderby'         => 'title',
 			'order'           => 'ASC',
@@ -17,7 +18,7 @@
 		
 			<?php $vaccinations = get_posts( $args ); ?> 
 			<table class="zebra">
-				<thead><tr><td>Vaccination</td><td>Pris</td><td>Antal</td><td>Beskyttelse</td></tr></thead>
+				<thead><tr><td><?php echo dlvs_translate('Vaccination'); ?></td><td><?php echo dlvs_translate('Price'); ?></td><td><?php echo dlvs_translate('Quantity'); ?></td><td><?php echo dlvs_translate('Protection'); ?></td></tr></thead>
 				<tbody>
 				<?php foreach($vaccinations as $vaccination){ ?>
 					<tr>

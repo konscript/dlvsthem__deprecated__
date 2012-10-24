@@ -40,7 +40,8 @@ array_splice($includes, count($includes), 0, array(
 	'includes/dlvs/relationships.php',
 	'includes/dlvs/rewrite.php',
 	'includes/dlvs/setup.php',
-	'includes/dlvs/utilities.php'
+	'includes/dlvs/utilities.php',
+	'includes/dlvs/translations.php'
 ));
 
 

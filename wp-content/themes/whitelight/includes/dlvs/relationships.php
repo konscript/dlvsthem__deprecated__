@@ -147,14 +147,37 @@ function getCountries($country_ids = null){
 }
 
 /*
+ * get countries ordered by name
+ ********/
+function getCountriesArray($country_ids = null){
+	$args = array(
+		'post_type'		=> 'country',
+		'order'       => 'ASC',
+		'orderby'     => 'title',
+		'numberposts'			=>	'-1',
+	);
+	// only fetch specified countries - if none specifiec fetch all	
+	if(isset($country_ids)){
+	
+		// set "include" argument in get_posts() to filter countries	
+		$args['include'] = $country_ids;
+	}
+	
+	// get countries
+	$countries = get_posts( $args );	
+	
+	return $countries;	
+}
+
+/*
  * get clinics ordered by name
  ********/
 function getClinics(){
 	$args = array(
 		'post_type'		=> 'clinic',
 		'order'       => 'ASC',
-		'orderby'     => 'title'
-		//'numberposts'			=>	'5',
+		'orderby'     => 'title',
+		'numberposts' =>	'0'
 	);
 
 	// get clinics

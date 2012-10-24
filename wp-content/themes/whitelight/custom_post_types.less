@@ -1,0 +1,229 @@
+
+/*****************************************************************
+ *	CUSTOM POST TYPES
+ *****************************************************************/    
+
+ /*
+  * Clinic
+	**********************************/
+
+	.post.clinic {
+		h1 {
+			//float: left;
+			// @include column(18);
+			//margin-top: 10px;			
+		}
+
+		.post-content {
+			// @include column(@content_cols, true);
+		}
+
+	}
+
+	.contact {
+		// @include column( @content_cols / 2 );	
+
+		p.address {	background: url('img/icon-address-black-20px.png') no-repeat	2px center; }
+		p.telephone {	background: url('img/icon-telephone-20px.png') no-repeat left center; }		
+		p.telephone, p.address {
+			padding-left: 27px;
+			margin-bottom: 20px; 
+			min-height: 20px;
+			line-height: 20px;
+		}
+	}	
+
+	.opening_hours {
+			// @include column( @content_cols / 2, true );	
+	}
+
+	.gmap a {
+		float: left;
+	}
+
+ /**
+  * region
+  **********************************/
+
+	div.post.region {
+
+		#country-selector {
+			width: 155px;
+		}
+
+		.region-map {
+			display: block;
+			margin: 0 auto;
+		}
+
+		.country-wrapper {
+			overflow: hidden;
+			//margin-top: 20px;
+			border-left: 1px solid @color-secondary-c;
+			border-top: 1px solid @color-secondary-c;			
+		}
+
+		.country {
+			display: block;
+			float: left;
+			width: 120px;
+			height: 30px;
+			//white-space: nowrap;
+			overflow: hidden;
+			border-right: 1px solid @color-secondary-c;
+			border-bottom: 1px solid @color-secondary-c;
+			padding: 10px;
+
+			img {
+				width: 40px;
+				float: left;
+				margin-right: 10px;
+			}
+
+			span {
+				display: block;
+				width: 70px;
+				float: left;
+				line-height: 14px;
+				height: 28px;
+				overflow: hidden;
+			}
+		}
+
+	}
+ 
+ /**
+  * country
+  **********************************/  
+
+  	.post.country header {
+  		float:left;
+  	}
+
+	.country-meta-header {
+		// @include column(@sidebar_columns);
+		text-align: center;
+		//font-size: 18px;
+		//padding: 0 0 20px 0;
+		margin: 0 0 20px 0;
+		font-family: @typography_family_secondary;		
+	}
+
+	.country-meta {
+		// @include column(@sidebar_columns);
+		border: 1px solid @color_secondary_c;
+		display: block;
+		//@include prepend(1);
+		//margin-top: 15px;
+		text-align: left;
+		line-height: 2em;
+		padding-bottom: 10px;
+
+		tbody {}
+		td {
+			padding: 5px 10px 0 10px;
+		}
+
+	}
+
+	.country-flag {
+
+		text-align: right;
+		margin-top: 10px;
+		margin-bottom: 10px;
+
+		img {
+			width: 100%;
+		}
+	}
+
+
+  div.post.country{	
+
+		// h1 {
+		// 	//float: left;
+		// 	// @include column(18);
+		// 	margin-top: 10px;			
+		// }
+
+		#vaccinations_groups {
+			// float: left;
+			// clear: both;
+			width: 100%;
+			border-top: 1px solid @color_secondary_c;
+			border-left: 1px solid @color_secondary_c;			
+		}
+
+		table#vaccinations_groups thead tr td {
+			font-weight: bold;
+		}
+
+		table#vaccinations_groups tr td:first-child	{
+			text-align: left;
+		}
+
+		table#vaccinations_groups tr td{
+			text-align: center;	
+			padding: 5px 10px;
+			border-bottom: 1px solid @color_secondary_c;
+			border-right: 1px solid @color_secondary_c;
+
+			img {
+				margin-top: 5px;
+				width: 18px;
+				height: 18px;
+			}
+		}
+
+		table#vaccinations_groups tr td.vaccination-name {
+			width: 30%;
+		}
+
+		.disclaimer {
+			// @include column(@content_cols, true);
+			color: #aaa;
+			h3 {
+				margin-top: 0;
+			}
+			ul {
+				list-style: disc;
+				margin: 10px 0;
+
+				li {
+					list-style-position: inside;
+					text-indent: 1em;
+				}
+			}
+		}
+  }
+
+/**
+* faq
+**********************************/    
+
+.faq{	
+
+	#searchFaq {
+		.rounded(4px);
+		//@include background-image(linear-gradient(#fff, #f0f0f0));
+		width: 200px;
+		position: relative;
+		//padding: 10px;
+		border: 1px solid #bebebe;
+		background-color: #fff;
+		color: #000;
+		outline: none;
+		margin-top: 10px;
+	}
+
+	#clearSearch {
+		.rounded(4px);
+		padding: 2px 6px 3px 6px;		
+		//border: 1px solid #D8DCDF;		
+	}
+
+	h3 {
+		font-size: 1em;
+		margin: 15px 0;
+	}
+}

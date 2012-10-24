@@ -3,6 +3,23 @@ WOO CUSTOM STYLESHEET (for DLVS)
 ---------------------*/
 
 /**
+ * PORTED FROM OLD TRAVEL VACCINATION
+ ************************************************/
+
+@color_secondary_b: #f6f6f6;    // White Dark
+@color_contrast_b:  #ee3124;    // Red Light
+@color_contrast:    darken(@color_contrast_b, 15%);     // Red
+@color_contrast_c:  lighten(@color_contrast_b, 10%);    // Red Lighter
+@color_secondary_c: #eee;           // White Darker
+
+// Typography
+@typography_family_primary: 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+@typography_family_secondary: Georgia, "Times New Roman", serif;
+@typography_size_normal: 11px;
+@typography_size_header: 161px;
+@typography_size_subheader: 141px;
+
+/**
  * Grid and Layout
  ************************************************/
 
@@ -24,34 +41,34 @@ WOO CUSTOM STYLESHEET (for DLVS)
  * Colors
  ************************************************/
 
-@color-primary: 		#000000;	// Black
+@color-primary: 	#000000;	// Black
 @color-primary-b: 	#444;			// Black Light 
 @color-primary-c: 	#7f7f7f;	// Black Lighter 
-@color-secondary:		#fff;			// White
+@color-secondary:	#fff;			// White
 @color-secondary-b:	#f6f6f6;	// White Dark
 @color-secondary-c:	#eee;			// White Darker
 @color-secondary-d:	#ccc;			// White Even Darker
 @color-contrast-b:	#ee3124;	// Red Light
-@color-contrast:		darken(@color-contrast-b, 15%);		// Red
+@color-contrast:	darken(@color-contrast-b, 15%);		// Red
 @color-contrast-c:	lighten(@color-contrast-b, 10%);	// Red Lighter
 
-@font-color: @color-primary-b;
-@link-color: @color-contrast;
-@link-hover-color: @color-contrast-b; 
-@link-focus-color: @color-contrast-b;
+@font-color: 		@color-primary-b;
+@link-color: 		@color-contrast;
+@link-hover-color: 	@color-contrast-b; 
+@link-focus-color: 	@color-contrast-b;
 @link-active-color: @color-contrast-b;
 @link-visited-color: @color-contrast;
-@alt-text-color: @color-primary-b;
+@alt-text-color: 	@color-primary-b;
 @blueprint-background-color: @color-secondary;
 @blueprint-border-color: @color-primary-c;
-@quiet-color: lighten(@font-color, 40%);
+@quiet-color: 		lighten(@font-color, 40%);
 
 /**
  * Typography
  ************************************************/
 
 // Typography
-@typography-family-primary: 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+@typography-family-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 @typography-family-secondary: Georgia, "Times New Roman", serif;
 @typography-size-normal: 11px;
 @typography-size-header: 161px;
@@ -65,7 +82,11 @@ WOO CUSTOM STYLESHEET (for DLVS)
  * Misc. (load compass modules)
  ************************************************/
 
-//@import "custom_templates.less";
+@import url(custom_elements.less);
+@import url(custom_utilities.less);
+@import url(custom_post_types.less);
+@import url(custom_templates.less);
+
 
 /**********************************************
  * Hide Search
@@ -81,7 +102,7 @@ WOO CUSTOM STYLESHEET (for DLVS)
 
 // Push top menu to the outmost right and align with logo
 #navigation ul#main-nav {
-	float: right;
+	//float: right;
 	margin-top: 20px
 }
 
@@ -161,10 +182,10 @@ WOO CUSTOM STYLESHEET (for DLVS)
 		padding-bottom: 20px;
 	}
 	#featured article header .entry {
-		font-family: Arial, sans-serif;
-		font-size: 1em;
+		font-family: 'Helvetica Neue', Helvetica, sans-serif;
+		//font-size: 1em;
 		line-height: 1.5em;
-		color: #585858;
+		color: black;
 	}
 	#featured article header .calltoaction {
 		position: absolute;
@@ -196,15 +217,19 @@ WOO CUSTOM STYLESHEET (for DLVS)
 	}
 	#featured article header {
 		text-shadow: none;
+		height: auto;
 	}
 	#featured article header h1 {
 		font-family: Georgia, serif;
 		font-size: 2.5em;
 	}
 	#featured article header .entry {
-		font-family: Arial, sans-serif;
+		font-family: 'Helvetica Neue', Helvetica, sans-serif;
 		font-size: 1em;
 		line-height: 1.5em;
+	}
+	.controls-container .flex-control-nav {
+		display: none;
 	}	
 }
 
@@ -215,11 +240,14 @@ WOO CUSTOM STYLESHEET (for DLVS)
 	}
 }
 
+.home #intro h1 {
+	margin-bottom: 0;
+}
+
 .controls-container .flex-control-nav {
 	left: 20px;
 	right: auto;
 }
-
 
 /********************************************** 
  * Features area on homepage
@@ -227,13 +255,18 @@ WOO CUSTOM STYLESHEET (for DLVS)
 
 .home-section#features li h2 a {
 	font-weight: normal;
-	font-style: italic;
+	//font-style: italic;
 	font-family: @typography-family-secondary;
 	font-size: 1.1em;
 }
 
+.home-section#features li p {
+	width: 80%;
+}
+
 .home-section#features li p img {
 	margin-right: 15px;
+	margin-bottom: 40px
 }
 
 .home-section li h2 {
@@ -245,8 +278,31 @@ WOO CUSTOM STYLESHEET (for DLVS)
 	font-weight: bold;
 }
 
+/* Only apply to iPad portrait and up */
+@media only screen and (min-width: 768px) {
+
+	.home-section.count4  {
+		header  { display: none; }
+		ul  {
+			float: left;
+			width: 100%;
+			li  {
+				float: left;
+				margin-right: 2%;
+				width: 23%;
+			}
+		}
+		&#portfolio  {
+			.portfolio-item {
+				width: 100%;
+				margin: 0!important;
+			}
+		}
+	}
+}
+
 /********************************************** 
- * Blogpost area on homepage
+ * Alt Blogpost area on homepage (picture with news)
  **********************************************/
 
 .home-section#blog-alt {
@@ -270,28 +326,78 @@ WOO CUSTOM STYLESHEET (for DLVS)
 /* Only apply to iPad portrait and up */
 @media only screen and (min-width: 768px) {
 
-.home-section#blog-alt {
+	.home-section#blog-alt {
+
+		header {
+			width: 48%;
+			margin-right: 4%
+		}
+
+		ul {
+			width: 48%;
+
+			li {
+				width: 46%;
+				margin-right: 8%;
+			}
+
+			li.last {
+				margin-right: 0;
+			}
+		}
+	}
+
+}
+
+/********************************************** 
+ * Blogpost area on homepage (interactive map)
+ **********************************************/
+
+.home-section#blog {
+	display: block;
+	padding-bottom: 2em;
 
 	header {
-		width: 48%;
-		margin-right: 4%
+		float: left;		
+		width: 68%;
+		margin-right: 2%;
 	}
-
-	ul {
-		width: 48%;
+	ul.entries {
+		margin-top: 15px;
+		float: left;
+		width: 30%;
 
 		li {
-			width: 46%;
-			margin-right: 8%;
-		}
+			width: 100%;
+			position: relative;
+			min-height: 110px;
 
-		li.last {
-			margin-right: 0;
+			img {
+				position: absolute;
+				left: 5px;
+			}
+			h3 {
+				position: absolute;
+				left: 30px;
+
+				a {
+					font-weight: normal;
+					//font-style: italic;
+					text-decoration: underline;
+					font-family: @typography-family-secondary;
+					font-size: 1.1em;	
+					color: black;				
+				}
+			}
+			p {
+				position: absolute;
+				top: 30px;
+				left: 30px;
+			}
 		}
 	}
 }
 
-}
 
 /********************************************** 
  * Streamer (mobile app) area on homepage
@@ -299,7 +405,7 @@ WOO CUSTOM STYLESHEET (for DLVS)
 
 // Streamer
 .home-section#streamer {
-	//margin-bottom: -26px;
+	margin-bottom: 0;
 	border-bottom: none;
 
 	h1 {
@@ -323,33 +429,41 @@ WOO CUSTOM STYLESHEET (for DLVS)
 /* Only apply to iPad portrait and up */
 @media only screen and (min-width: 768px) {
 
-.home-section#streamer {
+	.home-section#streamer {
 
-	h1 {
-		float: left;		
-		margin-bottom: 1.5em;
-	}
-
-	.phone {
-		float: right;
-
-		a.iphone-model {
-			float: left;
-			margin-top: -90px;
+		h1 {
+			float: left;		
+			margin-bottom: 1.5em;
 		}
 
-		.icons {
-			float: left;
-			margin: 0 40px;
+		.phone {
+			float: right;
 
-			a {
-				display: block;
-				margin: 5px 0;
+			a.iphone-model {
+				float: left;
+				margin-top: -90px;
 			}
-		}		
+
+			.icons {
+				float: left;
+				margin: 0 40px;
+
+				a {
+					display: block;
+					margin: 5px 0;
+				}
+			}		
+		}
 	}
 }
 
+/********************************************** 
+ * Footer
+ **********************************************/
+
+#footer-widgets .widget {
+	margin-bottom: 0;
+	color: white;
 }
 
 /********************************************** 

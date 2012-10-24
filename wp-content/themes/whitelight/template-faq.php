@@ -3,15 +3,17 @@
 
 <div id="content">
 	<div class="page col-full">
-		<?php sidebar(true, true, false); ?>
+		<?php //sidebar(true, true, false); ?>
 		<section id="main" class="col-left faq">
 
 			<header><h1><?php the_title(); ?></h1></header>
 			
-			<?php echo the_content(); ?>
-
-				<input type="text" id="searchFaq" placeholder="Type to search" />
-				<a href="#" id="clearSearch">x</a>
+			<?php while ( have_posts() ) { the_post(); $count++;
+				the_content(); 
+			}?>
+			
+			<input type="text" id="searchFaq" placeholder="<?php echo dlvs_translate("Type to search"); ?>" />
+			<a href="#" id="clearSearch">x</a>
 
 			<?php 		
 				// get regions and their related faq_id. Eg. Asia: 231, 234..
