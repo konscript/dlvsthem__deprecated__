@@ -187,18 +187,21 @@ table.zebra tbody tr:nth-child(odd) {
   * Home & Region
   **********************************/
 .home .region-map,
-.region .region-map {
+.region .region-map,
+.page-template-template-vaccination-recommendations-php .region-map {
   display: block;
   margin: 0 auto;
 }
 .home .country-wrapper,
-.region .country-wrapper {
+.region .country-wrapper,
+.page-template-template-vaccination-recommendations-php .country-wrapper {
   overflow: hidden;
   border-left: 1px solid #eeeeee;
   border-top: 1px solid #eeeeee;
 }
 .home .country,
-.region .country {
+.region .country,
+.page-template-template-vaccination-recommendations-php .country {
   display: block;
   float: left;
   width: 120px;
@@ -209,13 +212,15 @@ table.zebra tbody tr:nth-child(odd) {
   padding: 10px;
 }
 .home .country img,
-.region .country img {
+.region .country img,
+.page-template-template-vaccination-recommendations-php .country img {
   width: 40px;
   float: left;
   margin-right: 10px;
 }
 .home .country span,
-.region .country span {
+.region .country span,
+.page-template-template-vaccination-recommendations-php .country span {
   display: block;
   width: 70px;
   float: left;
@@ -224,7 +229,8 @@ table.zebra tbody tr:nth-child(odd) {
   overflow: hidden;
 }
 .home .map-header,
-.region .map-header {
+.region .map-header,
+.page-template-template-vaccination-recommendations-php .map-header {
   display: block;
   padding: 30px 0 0px 0;
   margin: 0;
@@ -235,16 +241,19 @@ table.zebra tbody tr:nth-child(odd) {
   text-align: center;
 }
 .home .map-form-container,
-.region .map-form-container {
+.region .map-form-container,
+.page-template-template-vaccination-recommendations-php .map-form-container {
   text-align: center;
   margin-top: 20px;
 }
 .home .map-form,
-.region .map-form {
+.region .map-form,
+.page-template-template-vaccination-recommendations-php .map-form {
   display: inline;
 }
 .home #map-wrapper,
-.region #map-wrapper {
+.region #map-wrapper,
+.page-template-template-vaccination-recommendations-php #map-wrapper {
   -webkit-border-top-right-radius: 3px;
   -webkit-border-bottom-right-radius: 3px;
   -webkit-border-bottom-left-radius: 3px;
@@ -271,7 +280,8 @@ table.zebra tbody tr:nth-child(odd) {
   background-image: radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
 }
 .home #map-wrapper h3,
-.region #map-wrapper h3 {
+.region #map-wrapper h3,
+.page-template-template-vaccination-recommendations-php #map-wrapper h3 {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   display: block;
   padding: 30px 0 0px 0;
@@ -284,14 +294,16 @@ table.zebra tbody tr:nth-child(odd) {
   font-family: Georgia, serif;
 }
 .home #map-continents #continents li .bg,
-.region #map-continents #continents li .bg {
+.region #map-continents #continents li .bg,
+.page-template-template-vaccination-recommendations-php #map-continents #continents li .bg {
   -moz-opacity: 0;
   -khtml-opacity: 0;
   -webkit-opacity: 0;
   opacity: 0;
 }
 .home #map-continents #continents li:hover .bg,
-.region #map-continents #continents li:hover .bg {
+.region #map-continents #continents li:hover .bg,
+.page-template-template-vaccination-recommendations-php #map-continents #continents li:hover .bg {
   -moz-opacity: 1;
   -khtml-opacity: 1;
   -webkit-opacity: 1;
