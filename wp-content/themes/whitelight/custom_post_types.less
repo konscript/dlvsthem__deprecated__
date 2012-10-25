@@ -3,52 +3,15 @@
  *	CUSTOM POST TYPES
  *****************************************************************/    
 
- /*
-  * Clinic
-	**********************************/
-
-	.post.clinic {
-		h1 {
-			//float: left;
-			// @include column(18);
-			//margin-top: 10px;			
-		}
-
-		.post-content {
-			// @include column(@content_cols, true);
-		}
-
-	}
-
-	.contact {
-		// @include column( @content_cols / 2 );	
-
-		p.address {	background: url('img/icon-address-black-20px.png') no-repeat	2px center; }
-		p.telephone {	background: url('img/icon-telephone-20px.png') no-repeat left center; }		
-		p.telephone, p.address {
-			padding-left: 27px;
-			margin-bottom: 20px; 
-			min-height: 20px;
-			line-height: 20px;
-		}
-	}	
-
-	.opening_hours {
-			// @include column( @content_cols / 2, true );	
-	}
-
-	.gmap a {
-		float: left;
-	}
-
  /**
-  * region
+  * Home & Region
   **********************************/
 
-	div.post.region {
+	.home,
+	.region {
 
 		#country-selector {
-			width: 155px;
+			//width: 344px;
 		}
 
 		.region-map {
@@ -90,10 +53,112 @@
 			}
 		}
 
+		.map-header {
+			.text_shadow(0, 1px, 0, rgba(255,255,255,0.5))
+			//@include text-shadow(0 1px 0 rgba(255,255,255,0.5));				
+			display: block;
+			padding: 30px 0 0px 0;
+			margin: 0;
+			line-height: 34px;
+			font-size: 34px;
+			color: @color-primary;
+			font-weight: normal;
+			text-align: center;
+		}
+
+		.map-form-container {
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		.map-text {}
+		.map-form { display: inline; }
+
+		// World Map
+		@lightblue: #D4ECF5;
+		@darkblue: #74B6CF;
+		#map-wrapper {
+
+			h3 {
+				text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+				display: block;
+				padding: 30px 0 0px 0;
+				margin: 0;
+				line-height: 34px;
+				font-size: 34px;
+				color: black;
+				font-weight: normal;
+				text-align: center;
+				font-family: Georgia, serif;	
+			}
+
+			.border-radius(3px,3px,3px,3px);
+			border: 1px solid @darkblue;
+			border-top: 1px solid lighten(@darkblue, 10%);
+			border-bottom: 1px solid darken(@darkblue, 10%);		
+			background-color: @darkblue;
+			background-image: -moz-radial-gradient(50% 50%, ellipse cover, @lightblue, @darkblue 100%);
+			background-image: -webkit-radial-gradient(50% 50%, ellipse cover, @lightblue, @darkblue 100%);
+			background-image: -o-radial-gradient(50% 50%, ellipse cover, @lightblue, @darkblue 100%);
+			background-image: -ms-radial-gradient(50% 50%, ellipse cover, @lightblue, @darkblue 100%);
+			background-image: radial-gradient(50% 50%, ellipse cover, @lightblue, @darkblue 100%)
+		}
+
+		#map-continents {
+			//padding-top: 35px;
+
+			#continents li .bg {
+				.opacity(0);
+				//.transition(opacity, ease, 2s);
+			}
+			#continents li:hover .bg {
+				.opacity(1);
+			}
+		}
+
 	}
  
+
+ /*
+	* Clinic
+	**********************************/
+
+	.post.clinic {
+		h1 {
+			//float: left;
+			// @include column(18);
+			//margin-top: 10px;			
+		}
+
+		.post-content {
+			// @include column(@content_cols, true);
+		}
+
+	}
+
+	.contact {
+		// @include column( @content_cols / 2 );	
+
+		p.address {	background: url('img/icon-address-black-20px.png') no-repeat	2px center; }
+		p.telephone {	background: url('img/icon-telephone-20px.png') no-repeat left center; }		
+		p.telephone, p.address {
+			padding-left: 27px;
+			margin-bottom: 20px; 
+			min-height: 20px;
+			line-height: 20px;
+		}
+	}	
+
+	.opening_hours {
+			// @include column( @content_cols / 2, true );	
+	}
+
+	.gmap a {
+		float: left;
+	}
+
  /**
-  * country
+  * Country
   **********************************/  
 
   	.post.country header {
@@ -198,7 +263,7 @@
   }
 
 /**
-* faq
+* FAQ
 **********************************/    
 
 .faq{	

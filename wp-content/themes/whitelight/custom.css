@@ -1,5 +1,5 @@
 /* 
-WOO CUSTOM STYLESHEET (for DLVS) test
+WOO CUSTOM STYLESHEET (for DLVS)
 ---------------------*/
 /**
  * PORTED FROM OLD TRAVEL VACCINATION
@@ -183,8 +183,122 @@ table.zebra tbody tr:nth-child(odd) {
 }
 /*****************************************************************
  *	CUSTOM POST TYPES
- *****************************************************************//*
-  * Clinic
+ *****************************************************************//**
+  * Home & Region
+  **********************************/
+.home .region-map,
+.region .region-map {
+  display: block;
+  margin: 0 auto;
+}
+.home .country-wrapper,
+.region .country-wrapper {
+  overflow: hidden;
+  border-left: 1px solid #eeeeee;
+  border-top: 1px solid #eeeeee;
+}
+.home .country,
+.region .country {
+  display: block;
+  float: left;
+  width: 120px;
+  height: 30px;
+  overflow: hidden;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  padding: 10px;
+}
+.home .country img,
+.region .country img {
+  width: 40px;
+  float: left;
+  margin-right: 10px;
+}
+.home .country span,
+.region .country span {
+  display: block;
+  width: 70px;
+  float: left;
+  line-height: 14px;
+  height: 28px;
+  overflow: hidden;
+}
+.home .map-header,
+.region .map-header {
+  display: block;
+  padding: 30px 0 0px 0;
+  margin: 0;
+  line-height: 34px;
+  font-size: 34px;
+  color: #000000;
+  font-weight: normal;
+  text-align: center;
+}
+.home .map-form-container,
+.region .map-form-container {
+  text-align: center;
+  margin-top: 20px;
+}
+.home .map-form,
+.region .map-form {
+  display: inline;
+}
+.home #map-wrapper,
+.region #map-wrapper {
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -webkit-border-top-left-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -moz-border-radius-topleft: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #74b6cf;
+  border-top: 1px solid #9acadc;
+  border-bottom: 1px solid #4ea2c2;
+  background-color: #74b6cf;
+  background-image: -moz-radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
+  background-image: -webkit-radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
+  background-image: -o-radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
+  background-image: -ms-radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
+  background-image: radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
+}
+.home #map-wrapper h3,
+.region #map-wrapper h3 {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  display: block;
+  padding: 30px 0 0px 0;
+  margin: 0;
+  line-height: 34px;
+  font-size: 34px;
+  color: black;
+  font-weight: normal;
+  text-align: center;
+  font-family: Georgia, serif;
+}
+.home #map-continents #continents li .bg,
+.region #map-continents #continents li .bg {
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+}
+.home #map-continents #continents li:hover .bg,
+.region #map-continents #continents li:hover .bg {
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+}
+/*
+	* Clinic
 	**********************************/
 .contact p.address {
   background: url('img/icon-address-black-20px.png') no-repeat 2px center;
@@ -203,45 +317,7 @@ table.zebra tbody tr:nth-child(odd) {
   float: left;
 }
 /**
-  * region
-  **********************************/
-div.post.region #country-selector {
-  width: 155px;
-}
-div.post.region .region-map {
-  display: block;
-  margin: 0 auto;
-}
-div.post.region .country-wrapper {
-  overflow: hidden;
-  border-left: 1px solid #eeeeee;
-  border-top: 1px solid #eeeeee;
-}
-div.post.region .country {
-  display: block;
-  float: left;
-  width: 120px;
-  height: 30px;
-  overflow: hidden;
-  border-right: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
-  padding: 10px;
-}
-div.post.region .country img {
-  width: 40px;
-  float: left;
-  margin-right: 10px;
-}
-div.post.region .country span {
-  display: block;
-  width: 70px;
-  float: left;
-  line-height: 14px;
-  height: 28px;
-  overflow: hidden;
-}
-/**
-  * country
+  * Country
   **********************************/.post.country header {
   float: left;
 }
@@ -308,7 +384,7 @@ div.post.country .disclaimer ul li {
   text-indent: 1em;
 }
 /**
-* faq
+* FAQ
 **********************************/.faq #searchFaq {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -337,81 +413,6 @@ div.post.country .disclaimer ul li {
   font-size: 1em;
   margin: 15px 0;
 }
-/*
- * Vaccination recommendations template
- **************************/.map-header {
-  display: block;
-  padding: 30px 0 0px 0;
-  margin: 0;
-  line-height: 34px;
-  font-size: 34px;
-  color: #000000;
-  font-weight: normal;
-  text-align: center;
-}
-.map-form-container {
-  text-align: center;
-  margin-top: 20px;
-}
-.map-form {
-  display: inline;
-}
-#country-selector {
-  width: 120px;
-}
-#map-wrapper {
-  -webkit-border-top-right-radius: 3px;
-  -webkit-border-bottom-right-radius: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  -webkit-border-top-left-radius: 3px;
-  -moz-border-radius-topright: 3px;
-  -moz-border-radius-bottomright: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  -moz-border-radius-topleft: 3px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-top-left-radius: 3px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  border: 1px solid #74b6cf;
-  border-top: 1px solid #9acadc;
-  border-bottom: 1px solid #4ea2c2;
-  background-color: #74b6cf;
-  background-image: -moz-radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
-  background-image: -webkit-radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
-  background-image: -o-radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
-  background-image: -ms-radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
-  background-image: radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
-}
-#map-wrapper h3 {
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  display: block;
-  padding: 30px 0 0px 0;
-  margin: 0;
-  line-height: 34px;
-  font-size: 34px;
-  color: black;
-  font-weight: normal;
-  text-align: center;
-  font-family: Georgia, serif;
-}
-#map-continents #continents li .bg {
-  -moz-opacity: 0;
-  -khtml-opacity: 0;
-  -webkit-opacity: 0;
-  opacity: 0;
-}
-#map-continents #continents li:hover .bg {
-  -moz-opacity: 1;
-  -khtml-opacity: 1;
-  -webkit-opacity: 1;
-  opacity: 1;
-}
-/*
- * Booking template
- **************************/
 /**********************************************
  * Hide Search
  **********************************************/
@@ -480,7 +481,7 @@ div.post.country .disclaimer ul li {
     width: 300px;
     float: right;
     margin-right: 10%;
-    background: #fff;
+    background-color: #fff;
     background-color: rgba(255, 255, 255, 0.7);
   }
   #featured article header {
@@ -611,7 +612,7 @@ div.post.country .disclaimer ul li {
   font-size: 1.05em;
 }
 .home-section#features li p {
-  width: 90%;
+  width: 100%;
 }
 .home-section#features li p img {
   margin-right: 10px;
@@ -765,6 +766,3 @@ div.post.country .disclaimer ul li {
 /********************************************** 
  * Mixins
  **********************************************/
-.whatevertesting {
-  color: green;
-}
